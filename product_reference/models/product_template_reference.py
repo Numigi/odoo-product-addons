@@ -11,6 +11,6 @@ class ProductTemplateReference(models.Model):
     _description = 'Product Template Reference'
 
     reference_type_id = fields.Many2one(
-        'product.template.reference.type', 'Reference Type')
-    value = fields.Char('Value')
+        'product.template.reference.type', 'Reference Type', required=True)
+    value = fields.Char('Value', required=True)
     product_id = fields.Many2one('product.template', copy=False)
