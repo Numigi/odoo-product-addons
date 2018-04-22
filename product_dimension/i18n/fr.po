@@ -1,0 +1,115 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* qubevu
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-23 23:25-0400\n"
+"PO-Revision-Date: 2018-04-23 23:27-0400\n"
+"Last-Translator: Agathe Mollé <agathe.molle@savoirfairelinux.com>\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: product_dimension
+#: model:ir.ui.view,arch_db:product_dimension.product_template_form_view_with_density
+msgid "<span>kg/m³</span>"
+msgstr "<span>kg/m³</span>"
+
+#. module: product_dimension
+#: model:ir.model.fields,field_description:product_dimension.field_product_product_density
+#: model:ir.model.fields,field_description:product_dimension.field_product_template_density
+#: model:ir.ui.view,arch_db:product_dimension.product_template_form_view_with_density
+msgid "Density"
+msgstr "Masse volumique"
+
+#. module: product_dimension
+#: model:ir.model.fields,field_description:product_dimension.field_product_product_dimension_uom_id
+#: model:ir.model.fields,field_description:product_dimension.field_product_template_dimension_uom_id
+msgid "Dimension UoM"
+msgstr "UdM des dimensions"
+
+#. module: product_dimension
+#: model:ir.model.fields,field_description:product_dimension.field_product_uom_has_category_length
+msgid "Has Category Length"
+msgstr "Dans la catégorie longueur"
+
+#. module: product_dimension
+#: model:ir.model.fields,field_description:product_dimension.field_product_uom_has_category_weight
+msgid "Has Category Weight"
+msgstr "Dans la catégorie poids"
+
+#. module: product_dimension
+#: model:ir.model.fields,field_description:product_dimension.field_product_product_height
+#: model:ir.model.fields,field_description:product_dimension.field_product_template_height
+msgid "Height"
+msgstr "Hauteur"
+
+#. module: product_dimension
+#: model:ir.model.fields,field_description:product_dimension.field_product_product_length
+#: model:ir.model.fields,field_description:product_dimension.field_product_template_length
+msgid "Length"
+msgstr "Longueur"
+
+#. module: product_dimension
+#: model:ir.model,name:product_dimension.model_product_product
+msgid "Product"
+msgstr "Article"
+
+#. module: product_dimension
+#: model:ir.model,name:product_dimension.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: product_dimension
+#: model:ir.model,name:product_dimension.model_product_uom
+msgid "Product Unit of Measure"
+msgstr "Unité de mesure"
+
+#. module: product_dimension
+#: code:addons/product_dimension/models/product.py:141
+#, python-format
+msgid "The height of a product ({product}) can not be negative."
+msgstr "La hauteur d'un article ({product}) ne peut pas être négative."
+
+#. module: product_dimension
+#: code:addons/product_dimension/models/product.py:150
+#, python-format
+msgid "The length of a product ({product}) can not be negative."
+msgstr "La longueur d'un article ({product}) ne peut pas être négative."
+
+#. module: product_dimension
+#: code:addons/product_dimension/models/product.py:48
+#, python-format
+msgid "The weight of a product ({product}) can not be negative."
+msgstr "Le poids d'un article ({product}) ne peut pas être négative."
+
+#. module: product_dimension
+#: code:addons/product_dimension/models/product.py:159
+#, python-format
+msgid "The width of a product ({product}) can not be negative."
+msgstr "La largeur d'un article ({product}) ne peut pas être négative."
+
+#. module: product_dimension
+#: model:ir.model.fields,field_description:product_dimension.field_product_product_weight_in_uom
+#: model:ir.model.fields,field_description:product_dimension.field_product_template_weight_in_uom
+msgid "Weight"
+msgstr "Masse"
+
+#. module: product_dimension
+#: model:ir.model.fields,field_description:product_dimension.field_product_product_weight_uom_id
+#: model:ir.model.fields,field_description:product_dimension.field_product_template_weight_uom_id
+msgid "Weight UoM"
+msgstr "UdM du poids"
+
+#. module: product_dimension
+#: model:ir.model.fields,field_description:product_dimension.field_product_product_width
+#: model:ir.model.fields,field_description:product_dimension.field_product_template_width
+msgid "Width"
+msgstr "Largeur"
