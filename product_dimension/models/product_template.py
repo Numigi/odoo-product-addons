@@ -4,7 +4,7 @@
 
 import odoo.addons.decimal_precision as dp
 
-from odoo import api, fields, models
+from odoo import fields, models
 
 
 class ProductTemplateWithWeightInKg(models.Model):
