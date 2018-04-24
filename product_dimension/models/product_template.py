@@ -2,12 +2,9 @@
 # © 2018 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
-from functools import partial
-
 import odoo.addons.decimal_precision as dp
 
-from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
+from odoo import api, fields, models
 
 
 class ProductTemplateWithWeightInKg(models.Model):

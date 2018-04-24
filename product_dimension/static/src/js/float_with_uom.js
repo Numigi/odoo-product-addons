@@ -2,12 +2,12 @@
     © 2018 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
     License LGPL-3.0 or later (http://www.gnu.org/licenses/LGPL.html).
 */
-odoo.define('product_dimension.float_with_uom', function(require) {
+odoo.define("product_dimension.float_with_uom", function(require) {
     "use strict";
 
-    var registry = require('web.field_registry');
+    var registry = require("web.field_registry");
 
-    var FloatWithUoM = registry.get('float').extend({
+    var FloatWithUoM = registry.get("float").extend({
         /**
          * Setup the related uom field attribute.
          */
@@ -16,8 +16,8 @@ odoo.define('product_dimension.float_with_uom', function(require) {
             this._uomField = this.attrs.uom_field;
             if(!this._uomField){
                 console.log(
-                    'Missing attribute uom_field on the field ' +
-                    this.name + ' of model ' + this.model + '.');
+                    "Missing attribute uom_field on the field " +
+                    this.name + " of model " + this.model + ".");
             }
         },
         /**
@@ -25,9 +25,9 @@ odoo.define('product_dimension.float_with_uom', function(require) {
          */
         _formatValue(){
             var number = this._super.apply(this, arguments);
-            if(this.mode == 'readonly'){
+            if(this.mode === "readonly"){
                 var uom = this._getUoMDisplayValue();
-                return number && uom ? number + ' ' + uom : number;
+                return number && uom ? number + " " + uom : number;
             }
             return number;
         },
@@ -43,5 +43,5 @@ odoo.define('product_dimension.float_with_uom', function(require) {
         },
     });
 
-    registry.add('float_with_uom', FloatWithUoM);
+    registry.add("float_with_uom", FloatWithUoM);
 });
