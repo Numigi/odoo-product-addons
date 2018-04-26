@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="product_template_form_view_with_weight_readonly" model="ir.ui.view">
+        <field name="name">Product Template Form With Weight in Kg Readonly</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="stock.view_template_property_form"/>
+        <field name="arch" type="xml">
+            <field name="weight" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="product_template_form_view_with_volume_readonly" model="ir.ui.view">
+        <field name="name">Product Template Form With Volume Readonly</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="stock.view_template_property_form"/>
+        <field name="arch" type="xml">
+            <field name="volume" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="product_template_form_view_with_dimensions" model="ir.ui.view">
+        <field name="name">Product Template Form With Dimensions</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="stock.view_template_property_form"/>
+        <field name="arch" type="xml">
+            <label for="weight" position="before">
+                <field name="length" widget="float_with_uom" uom_field="dimension_uom_id"/>
+                <field name="width" widget="float_with_uom" uom_field="dimension_uom_id"/>
+                <field name="height" widget="float_with_uom" uom_field="dimension_uom_id"/>
+                <label for="dimension_uom_id" class="oe_edit_only"/>
+                <field name="dimension_uom_id" class="oe_edit_only" nolabel="1"
+                    domain="[('has_category_length', '=', True)]" options="{'no_create': True}"
+                    attrs="{'required': ['|', '|', ('length', '!=', 0), ('width', '!=', 0), ('height', '!=', 0)]}"/>
+            </label>
+        </field>
+    </record>
+
+    <record id="product_template_form_view_with_weight_in_uom" model="ir.ui.view">
+        <field name="name">Product Template Form With Weight In UoM</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="stock.view_template_property_form"/>
+        <field name="arch" type="xml">
+            <label for="weight" position="before">
+                <field name="weight_in_uom" widget="float_with_uom" uom_field="weight_uom_id"/>
+                <label for="weight_uom_id" class="oe_edit_only"/>
+                <field name="weight_uom_id" class="oe_edit_only" nolabel="1"
+                    domain="[('has_category_weight', '=', True)]" options="{'no_create': True}"
+                    attrs="{'required': [('weight_in_uom', '!=', 0)]}"/>
+            </label>
+        </field>
+    </record>
+
+    <record id="product_template_form_view_with_density" model="ir.ui.view">
+        <field name="name">Product Template Form With Density</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="stock.view_template_property_form"/>
+        <field name="arch" type="xml">
+            <div name="volume" position="after">
+                <label for="density"/>
+                <div class="o_row" name="density">
+                    <field name="density" string="Density"/>
+                    <span>kg/m³</span>
+                </div>
+            </div>
+        </field>
+    </record>
+
+</odoo>
