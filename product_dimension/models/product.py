@@ -76,14 +76,17 @@ class ProductWithWeightInUoM(models.Model):
         vals_copy = vals.copy()
         super().write(vals)
 
-        if (
-            ('weight_in_uom' in vals_copy or 'weight_uom_id' in vals_copy) and
-            not self._context.get('updating_weight_in_uom_from_weight')
-        ):
+        updating_weight_in_uom = 'weight_in_uom' in vals_copy or 'weight_uom_id' in vals_copy
+        updating_weight_in_uom_from_weight = self._context.get('updating_weight_in_uom_from_weight')
+
+        updating_weight = 'weight' in vals_copy
+        updating_weight_from_weight_in_uom = self._context.get('updating_weight_from_weight_in_uom')
+
+        if updating_weight_in_uom and not updating_weight_in_uom_from_weight:
             for record in self:
                 record.update_weight_from_weight_in_uom()
 
-        elif 'weight' in vals_copy and not self._context.get('updating_weight_from_weight_in_uom'):
+        elif updating_weight and not updating_weight_from_weight_in_uom:
             for record in self:
                 record.update_weight_in_uom_from_weight()
 
