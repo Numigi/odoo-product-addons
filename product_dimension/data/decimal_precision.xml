@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="decimal_product_dimension" model="decimal.precision" forcecreate="True">
+        <field name="name">Product Dimension</field>
+        <field name="digits">4</field>
+    </record>
+
+   <record id="decimal_product_volume" model="decimal.precision" forcecreate="True">
+        <field name="name">Product Volume</field>
+        <field name="digits">4</field>
+    </record>
+
+   <record id="decimal_product_density" model="decimal.precision" forcecreate="True">
+        <field name="name">Product Density</field>
+        <field name="digits">2</field>
+    </record>
+
+</odoo>
