@@ -57,12 +57,15 @@ class ProductTemplateWithDimensions(models.Model):
     )
 
 
-class ProductTemplateWithVolumeDecimalPrecision(models.Model):
-    """Add a decimal precision to the volume of a product."""
+class ProductTemplateWithVolumeRelated(models.Model):
+    """Make the volume related to the volume on the variant."""
 
     _inherit = 'product.template'
 
-    volume = fields.Float(digits=dp.get_precision('Product Volume'))
+    volume = fields.Float(
+        related='product_variant_ids.volume',
+        store=True,
+    )
 
 
 class ProductTemplateWithDensity(models.Model):
@@ -73,4 +76,5 @@ class ProductTemplateWithDensity(models.Model):
     density = fields.Float(
         'Density',
         related='product_variant_ids.density',
+        store=True,
     )

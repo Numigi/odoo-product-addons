@@ -43,7 +43,7 @@ msgstr "Dans la catégorie longueur"
 #. module: product_dimension
 #: model:ir.model.fields,field_description:product_dimension.field_product_uom_has_category_weight
 msgid "Has Category Weight"
-msgstr "Dans la catégorie poids"
+msgstr "Dans la catégorie masse"
 
 #. module: product_dimension
 #: model:ir.model.fields,field_description:product_dimension.field_product_product_height
@@ -88,7 +88,7 @@ msgstr "La longueur d'un article ({product}) ne peut pas être négative."
 #: code:addons/product_dimension/models/product.py:48
 #, python-format
 msgid "The weight of a product ({product}) can not be negative."
-msgstr "Le poids d'un article ({product}) ne peut pas être négative."
+msgstr "La masse d'un article ({product}) ne peut pas être négative."
 
 #. module: product_dimension
 #: code:addons/product_dimension/models/product.py:159
@@ -103,10 +103,15 @@ msgid "Weight"
 msgstr "Masse"
 
 #. module: product_dimension
+#: model:ir.ui.view,arch_db:product_dimension.product_template_form_view_with_weight_in_kg_label
+msgid "Weight (kg)"
+msgstr "Masse (kg)"
+
+#. module: product_dimension
 #: model:ir.model.fields,field_description:product_dimension.field_product_product_weight_uom_id
 #: model:ir.model.fields,field_description:product_dimension.field_product_template_weight_uom_id
 msgid "Weight UoM"
-msgstr "UdM du poids"
+msgstr "UdM de la masse"
 
 #. module: product_dimension
 #: model:ir.model.fields,field_description:product_dimension.field_product_product_width
