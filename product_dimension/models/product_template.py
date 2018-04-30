@@ -57,12 +57,27 @@ class ProductTemplateWithDimensions(models.Model):
     )
 
 
-class ProductTemplateWithVolumeDecimalPrecision(models.Model):
-    """Add a decimal precision to the volume of a product."""
+class ProductTemplateWithVolumeRelated(models.Model):
+    """Make the volume related to the volume on the variant.
+
+    In the odoo source code, the field volume is computed instead of related.
+
+    The problem is that when the volume is recomputed on product.product
+    (because a dimension changes), the new volume is not propagated to product.template.
+
+    In other words, the following use of api.depends:
+
+        @api.depends('product_variant_ids', 'product_variant_ids.volume')
+
+    does not work if volume is computed (even if it is stored).
+    """
 
     _inherit = 'product.template'
 
-    volume = fields.Float(digits=dp.get_precision('Product Volume'))
+    volume = fields.Float(
+        related='product_variant_ids.volume',
+        store=True,
+    )
 
 
 class ProductTemplateWithDensity(models.Model):
@@ -73,4 +88,5 @@ class ProductTemplateWithDensity(models.Model):
     density = fields.Float(
         'Density',
         related='product_variant_ids.density',
+        store=True,
     )
