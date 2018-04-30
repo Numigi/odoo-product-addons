@@ -58,7 +58,19 @@ class ProductTemplateWithDimensions(models.Model):
 
 
 class ProductTemplateWithVolumeRelated(models.Model):
-    """Make the volume related to the volume on the variant."""
+    """Make the volume related to the volume on the variant.
+
+    In the odoo source code, the field volume is computed instead of related.
+
+    The problem is that when the volume is recomputed on product.product
+    (because a dimension changes), the new volume is not propagated to product.template.
+
+    In other words, the following use of api.depends:
+
+        @api.depends('product_variant_ids', 'product_variant_ids.volume')
+
+    does not work if volume is computed (even if it is stored).
+    """
 
     _inherit = 'product.template'
 
