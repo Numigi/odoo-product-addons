@@ -4,5 +4,6 @@
 
 from . import (
     test_dimensions,
+    test_product_template,
     test_weight_in_uom,
 )

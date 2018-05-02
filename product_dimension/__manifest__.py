@@ -16,6 +16,7 @@
         'data/decimal_precision.xml',
         'views/float_with_uom.xml',
         'views/product.xml',
+        'views/product_template.xml',
     ],
     'installable': True,
 }

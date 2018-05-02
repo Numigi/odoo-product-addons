@@ -1,83 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="product_template_form_view_with_weight_readonly" model="ir.ui.view">
-        <field name="name">Product Template Form With Weight in Kg Readonly</field>
-        <field name="model">product.template</field>
-        <field name="inherit_id" ref="stock.view_template_property_form"/>
-        <field name="arch" type="xml">
-            <field name="weight" position="attributes">
-                <attribute name="readonly">1</attribute>
-            </field>
-        </field>
-    </record>
+    <!--
+        Standardize the product simplified form with the product template form.
 
-    <record id="product_template_form_view_with_weight_in_kg_label" model="ir.ui.view">
-        <field name="name">Product Template Form With Weight in Kg Label</field>
-        <field name="model">product.template</field>
-        <field name="inherit_id" ref="stock.view_template_property_form"/>
-        <field name="arch" type="xml">
-            <label for="weight" position="attributes">
-                <attribute name="string">Weight (kg)</attribute>
-            </label>
-        </field>
-    </record>
+        Because the group `weight` only contains the weight and the volume,
+        we can replace the whole group.
 
-    <record id="product_template_form_view_with_volume_readonly" model="ir.ui.view">
-        <field name="name">Product Template Form With Volume Readonly</field>
-        <field name="model">product.template</field>
-        <field name="inherit_id" ref="stock.view_template_property_form"/>
-        <field name="arch" type="xml">
-            <field name="volume" position="attributes">
-                <attribute name="readonly">1</attribute>
-            </field>
-        </field>
-    </record>
+        Adding the new elements one by one in this view can not be done without complex xpaths.
+    -->
 
-    <record id="product_template_form_view_with_dimensions" model="ir.ui.view">
-        <field name="name">Product Template Form With Dimensions</field>
-        <field name="model">product.template</field>
-        <field name="inherit_id" ref="stock.view_template_property_form"/>
+    <record id="product_template_form_view_with_dimension_label" model="ir.ui.view">
+        <field name="name">Product Simplified Form With Dimensions</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_variant_easy_edit_view"/>
         <field name="arch" type="xml">
-            <label for="weight" position="before">
-                <field name="length" widget="float_with_uom" uom_field="dimension_uom_id"/>
-                <field name="width" widget="float_with_uom" uom_field="dimension_uom_id"/>
-                <field name="height" widget="float_with_uom" uom_field="dimension_uom_id"/>
-                <label for="dimension_uom_id" class="oe_edit_only"/>
-                <field name="dimension_uom_id" class="oe_edit_only" nolabel="1"
-                    domain="[('has_category_length', '=', True)]" options="{'no_create': True}"
-                    attrs="{'required': ['|', '|', ('length', '!=', 0), ('width', '!=', 0), ('height', '!=', 0)]}"/>
-            </label>
-        </field>
-    </record>
+            <group name="weight" position="replace">
+                <group string="Dimensions" name="dimensions" attrs="{'invisible': [('type', 'not in', ['product', 'consu'])]}">
 
-    <record id="product_template_form_view_with_weight_in_uom" model="ir.ui.view">
-        <field name="name">Product Template Form With Weight In UoM</field>
-        <field name="model">product.template</field>
-        <field name="inherit_id" ref="stock.view_template_property_form"/>
-        <field name="arch" type="xml">
-            <label for="weight" position="before">
-                <field name="weight_in_uom" widget="float_with_uom" uom_field="weight_uom_id"/>
-                <label for="weight_uom_id" class="oe_edit_only"/>
-                <field name="weight_uom_id" class="oe_edit_only" nolabel="1"
-                    domain="[('has_category_weight', '=', True)]" options="{'no_create': True}"
-                    attrs="{'required': [('weight_in_uom', '!=', 0)]}"/>
-            </label>
-        </field>
-    </record>
+                    <field name="length" widget="float_with_uom" uom_field="dimension_uom_id"/>
+                    <field name="width" widget="float_with_uom" uom_field="dimension_uom_id"/>
+                    <field name="height" widget="float_with_uom" uom_field="dimension_uom_id"/>
+                    <label for="dimension_uom_id" class="oe_edit_only"/>
+                    <field name="dimension_uom_id" class="oe_edit_only" nolabel="1"
+                        domain="[('has_category_length', '=', True)]" options="{'no_create': True}"
+                        attrs="{'required': ['|', '|', ('length', '!=', 0), ('width', '!=', 0), ('height', '!=', 0)]}"/>
 
-    <record id="product_template_form_view_with_density" model="ir.ui.view">
-        <field name="name">Product Template Form With Density</field>
-        <field name="model">product.template</field>
-        <field name="inherit_id" ref="stock.view_template_property_form"/>
-        <field name="arch" type="xml">
-            <div name="volume" position="after">
-                <label for="density"/>
-                <div class="o_row" name="density">
-                    <field name="density" string="Density"/>
-                    <span>kg/m³</span>
-                </div>
-            </div>
+                    <field name="weight_in_uom" widget="float_with_uom" uom_field="weight_uom_id"/>
+                    <label for="weight_uom_id" class="oe_edit_only"/>
+                    <field name="weight_uom_id" class="oe_edit_only" nolabel="1"
+                        domain="[('has_category_weight', '=', True)]" options="{'no_create': True}"
+                        attrs="{'required': [('weight_in_uom', '!=', 0)]}"/>
+
+                    <label for="weight" string="Weight (kg)"/>
+                    <div class="o_row" name="weight">
+                        <field name="weight" readonly="1"/>
+                        <span>kg</span>
+                    </div>
+
+                    <label for="volume"/>
+                    <div class="o_row" name="volume">
+                        <field name="volume" readonly="1"/>
+                        <span>m³</span>
+                    </div>
+
+                    <label for="density"/>
+                    <div class="o_row" name="density">
+                        <field name="density"/>
+                        <span>kg/m³</span>
+                    </div>
+
+                </group>
+            </group>
         </field>
     </record>
 
