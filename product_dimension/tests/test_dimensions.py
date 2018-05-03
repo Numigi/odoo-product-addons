@@ -29,6 +29,17 @@ class TestProduct(common.SavepointCase):
         """Test that the density is equal to weigth / volume."""
         self.assertEqual(self.product.density, 4)
 
+    def test_if_volume_is_very_low_then_density_is_not_null(self):
+        """Check that the precision in units of measure has no impact on the density."""
+        self.product.write({
+            'height': 1,
+            'length': 1,
+            'width': 1,
+            'dimension_uom_id': self.env.ref('product.product_uom_cm').id,
+            'weight': 1,
+        })
+        self.assertAlmostEqual(self.product.density, 1 / (0.01 * 0.01 * 0.01))
+
     def test_height_is_not_negative(self):
         with self.assertRaises(ValidationError):
             self.product.height = -10

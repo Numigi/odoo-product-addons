@@ -179,9 +179,8 @@ class ProductWithVolumeComputedFromDimensions(models.Model):
 
     volume = fields.Float(compute='_compute_volume', store=True)
 
-    @api.depends('height', 'length', 'width')
-    def _compute_volume(self):
-        """Compute the volume of the product."""
+    def _get_volume_without_rounding(self):
+        """Get the volume of the product without rounding the result."""
         meter = self.env.ref('product.product_uom_meter')
 
         def to_meter(from_uom, dimension):
@@ -193,11 +192,17 @@ class ProductWithVolumeComputedFromDimensions(models.Model):
             """
             return from_uom._compute_quantity(dimension, meter, round=False)
 
+        height_in_meter = to_meter(self.dimension_uom_id, self.height)
+        length_in_meter = to_meter(self.dimension_uom_id, self.length)
+        width_in_meter = to_meter(self.dimension_uom_id, self.width)
+
+        return height_in_meter * length_in_meter * width_in_meter
+
+    @api.depends('height', 'length', 'width', 'dimension_uom_id')
+    def _compute_volume(self):
+        """Compute the volume of the product."""
         for product in self:
-            height_in_meter = to_meter(product.dimension_uom_id, product.height)
-            length_in_meter = to_meter(product.dimension_uom_id, product.length)
-            width_in_meter = to_meter(product.dimension_uom_id, product.width)
-            product.volume = height_in_meter * length_in_meter * width_in_meter
+            product.volume = product._get_volume_without_rounding()
 
 
 class ProductWithDensity(models.Model):
@@ -212,8 +217,15 @@ class ProductWithDensity(models.Model):
         store=True,
     )
 
-    @api.depends('weight', 'volume')
+    @api.depends('weight', 'height', 'length', 'width', 'dimension_uom_id')
     def _compute_density(self):
-        """Compute the density of the product."""
+        """Compute the density of the product.
+
+        For computing the volume, we use the volume without rounding.
+        A very small volume will result in a very high density.
+        Therefore, the precision in units of measure has an important impact on
+        the result.
+        """
         for product in self:
-            product.density = product.weight / product.volume if product.volume else None
+            volume = product._get_volume_without_rounding()
+            product.density = product.weight / volume if volume else None

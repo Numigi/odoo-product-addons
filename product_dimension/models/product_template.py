@@ -4,7 +4,7 @@
 
 import odoo.addons.decimal_precision as dp
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class ProductTemplateWithWeightInKg(models.Model):
@@ -55,6 +55,32 @@ class ProductTemplateWithDimensions(models.Model):
         related='product_variant_ids.dimension_uom_id',
         store=True,
     )
+
+
+class ProductTemplatePropagateFieldsOnCreate(models.Model):
+    """Properly save dimensions on the variant when creating a product template.
+
+    At the creation of the product template, the related field values are not passed
+    over to the related variant, because the variant is created after the template.
+
+    Therefore, those fields need to be propagated to the variant after the create process.
+    """
+
+    _inherit = 'product.template'
+
+    @api.model
+    def create(self, vals):
+        template = super().create(vals)
+
+        fields_to_propagate = (
+            'weight_in_uom', 'weight_uom_id',
+            'height', 'length', 'width', 'dimension_uom_id',
+        )
+
+        vals_to_propagate = {k: v for k, v in vals.items() if k in fields_to_propagate}
+        template.product_variant_ids.write(vals_to_propagate)
+
+        return template
 
 
 class ProductTemplateWithVolumeRelated(models.Model):
