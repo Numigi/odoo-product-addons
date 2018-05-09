@@ -78,7 +78,14 @@ class ProductTemplatePropagateFieldsOnCreate(models.Model):
         )
 
         vals_to_propagate = {k: v for k, v in vals.items() if k in fields_to_propagate}
-        template.product_variant_ids.write(vals_to_propagate)
+
+        for variant in template.product_variant_ids:
+            # Only write values that are different from the variant's default value.
+            changed_values_to_propagate = {
+                k: v for k, v in vals_to_propagate.items()
+                if (v or variant[k]) and v != variant[k]
+            }
+            variant.write(changed_values_to_propagate)
 
         return template
 
