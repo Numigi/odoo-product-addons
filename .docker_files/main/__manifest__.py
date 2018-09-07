@@ -13,6 +13,7 @@
     'depends': [
         'product_reference',
         'product_dimension',
+        'product_supplier_name_search',
     ],
     'installable': True,
 }
