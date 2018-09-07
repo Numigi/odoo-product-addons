@@ -4,7 +4,7 @@
 from odoo.tests import common
 
 
-class TestStockInventory(common.SavepointCase):
+class TestProductNameSearch(common.SavepointCase):
 
     @classmethod
     def setUpClass(cls):
