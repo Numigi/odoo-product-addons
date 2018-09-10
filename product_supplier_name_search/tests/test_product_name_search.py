@@ -33,8 +33,8 @@ class TestProductNameSearch(common.SavepointCase):
             })],
         })
 
-    def _search(self, name):
-        items = self.env['product.product'].name_search(name)
+    def _search(self, name, operator='ilike'):
+        items = self.env['product.product'].name_search(name, operator=operator, limit=999999)
         return self.env['product.product'].browse([el[0] for el in items])
 
     def test_search_by_product_name(self):
@@ -88,3 +88,13 @@ class TestProductNameSearch(common.SavepointCase):
         res = self._search('BC1001')
         assert self.table not in res
         assert self.chair in res
+
+    def test_name_search_with_negative_operator(self):
+        """Test that the module does not break the standard behavior of negative operators.
+
+        The module only supports positive operators (i.e. `ilike`).
+        If a negative operator is given, the supplier info will not be checked.
+        """
+        items = self._search('WT2001', operator='!=')
+        assert self.table not in items
+        assert self.chair in items
