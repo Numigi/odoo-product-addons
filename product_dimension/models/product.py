@@ -25,7 +25,7 @@ class ProductWithWeightWithTrackVisibility(models.Model):
 
 
 class ProductWithWeightInUoM(models.Model):
-    """Add the fields weight_in_uom and weight_uom_id to products.
+    """Add the fields weight_in_uom and specific_weight_uom_id to products.
 
     The weight can not be negative.
     """
@@ -36,9 +36,9 @@ class ProductWithWeightInUoM(models.Model):
         'Weight', digits=dp.get_precision('Stock Weight'),
         track_visibility='onchange')
 
-    weight_uom_id = fields.Many2one(
+    specific_weight_uom_id = fields.Many2one(
         'product.uom', 'Weight UoM', ondelete='restrict',
-        track_visibility='onchange')
+        track_visibility='onchange', oldname='weight_uom_id')
 
     @api.constrains('weight_in_uom')
     def _check_weight_is_not_negative(self):
@@ -76,7 +76,7 @@ class ProductWithWeightInUoM(models.Model):
         vals_copy = vals.copy()
         super().write(vals)
 
-        updating_weight_in_uom = 'weight_in_uom' in vals_copy or 'weight_uom_id' in vals_copy
+        updating_weight_in_uom = 'weight_in_uom' in vals_copy or 'specific_weight_uom_id' in vals_copy
         updating_weight_in_uom_from_weight = self._context.get('updating_weight_in_uom_from_weight')
 
         updating_weight = 'weight' in vals_copy
@@ -95,17 +95,17 @@ class ProductWithWeightInUoM(models.Model):
     def update_weight_from_weight_in_uom(self):
         """Update the weight in kg from the weight in uom."""
         uom_kg = self.env.ref('product.product_uom_kgm')
-        weight = self.weight_uom_id._compute_quantity(self.weight_in_uom, uom_kg)
+        weight = self.specific_weight_uom_id._compute_quantity(self.weight_in_uom, uom_kg)
         self.with_context(updating_weight_from_weight_in_uom=True).write({'weight': weight})
 
     def update_weight_in_uom_from_weight(self):
         """Update the weight in uom from the weight in kg."""
         uom_kg = self.env.ref('product.product_uom_kgm')
-        uom = self.weight_uom_id or uom_kg
+        uom = self.specific_weight_uom_id or uom_kg
         weight_in_uom = uom_kg._compute_quantity(self.weight, uom)
         self.with_context(updating_weight_in_uom_from_weight=True).write({
             'weight_in_uom': weight_in_uom,
-            'weight_uom_id': uom.id,
+            'specific_weight_uom_id': uom.id,
         })
 
 
