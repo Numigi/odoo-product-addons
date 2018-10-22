@@ -64,9 +64,9 @@
         <field name="inherit_id" ref="stock.view_template_property_form"/>
         <field name="arch" type="xml">
             <label for="weight" position="before">
-                <field name="weight_in_uom" widget="float_with_uom" uom_field="weight_uom_id"/>
-                <label for="weight_uom_id" class="oe_edit_only"/>
-                <field name="weight_uom_id" class="oe_edit_only" nolabel="1"
+                <field name="weight_in_uom" widget="float_with_uom" uom_field="specific_weight_uom_id"/>
+                <label for="specific_weight_uom_id" class="oe_edit_only"/>
+                <field name="specific_weight_uom_id" class="oe_edit_only" nolabel="1"
                     domain="[('has_category_weight', '=', True)]" options="{'no_create': True}"
                     attrs="{'required': [('weight_in_uom', '!=', 0)]}"/>
             </label>

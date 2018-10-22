@@ -48,16 +48,16 @@ class TestProductTemplate(common.SavepointCase):
             'name': 'Test Product',
             'type': 'product',
             'weight_in_uom': self.weight_in_uom,
-            'weight_uom_id': self.gram.id,
+            'specific_weight_uom_id': self.gram.id,
         })
 
         self.template.refresh()
         self.assertEqual(self.template.weight_in_uom, self.weight_in_uom)
-        self.assertEqual(self.template.weight_uom_id, self.gram)
+        self.assertEqual(self.template.specific_weight_uom_id, self.gram)
         self.assertEqual(self.template.weight, self.weight)
 
         self.assertEqual(self.template.product_variant_ids.weight_in_uom, self.weight_in_uom)
-        self.assertEqual(self.template.product_variant_ids.weight_uom_id, self.gram)
+        self.assertEqual(self.template.product_variant_ids.specific_weight_uom_id, self.gram)
         self.assertEqual(self.template.product_variant_ids.weight, self.weight)
 
     def test_when_creating_product_template_then_weight_is_propagated_to_the_variant(self):
@@ -69,11 +69,11 @@ class TestProductTemplate(common.SavepointCase):
 
         self.template.refresh()
         self.assertEqual(self.template.weight_in_uom, 1)
-        self.assertEqual(self.template.weight_uom_id, self.kg)
+        self.assertEqual(self.template.specific_weight_uom_id, self.kg)
         self.assertEqual(self.template.weight, 1)
 
         self.assertEqual(self.template.product_variant_ids.weight_in_uom, 1)
-        self.assertEqual(self.template.product_variant_ids.weight_uom_id, self.kg)
+        self.assertEqual(self.template.product_variant_ids.specific_weight_uom_id, self.kg)
         self.assertEqual(self.template.product_variant_ids.weight, 1)
 
     def test_when_creating_product_template_then_volume_is_computed_on_the_variant(self):
@@ -96,7 +96,7 @@ class TestProductTemplate(common.SavepointCase):
             'name': 'Test Product',
             'type': 'product',
             'weight_in_uom': self.weight_in_uom,
-            'weight_uom_id': self.gram.id,
+            'specific_weight_uom_id': self.gram.id,
             'height': self.height,
             'length': self.length,
             'width': self.width,

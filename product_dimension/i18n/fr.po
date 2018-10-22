@@ -125,8 +125,8 @@ msgid "Weight (kg)"
 msgstr "Masse (kg)"
 
 #. module: product_dimension
-#: model:ir.model.fields,field_description:product_dimension.field_product_product_weight_uom_id
-#: model:ir.model.fields,field_description:product_dimension.field_product_template_weight_uom_id
+#: model:ir.model.fields,field_description:product_dimension.field_product_product_specific_weight_uom_id
+#: model:ir.model.fields,field_description:product_dimension.field_product_template_specific_weight_uom_id
 msgid "Weight UoM"
 msgstr "UdM de la masse"
 
