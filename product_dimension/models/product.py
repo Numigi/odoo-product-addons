@@ -38,7 +38,7 @@ class ProductWithWeightInUoM(models.Model):
 
     specific_weight_uom_id = fields.Many2one(
         'uom.uom', 'Weight UoM', ondelete='restrict',
-        track_visibility='onchange', oldname='weight_uom_id')
+        track_visibility='onchange')
 
     @api.constrains('weight_in_uom')
     def _check_weight_is_not_negative(self):

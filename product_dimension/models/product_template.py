@@ -30,7 +30,6 @@ class ProductTemplateWithWeightInUoM(models.Model):
         related='product_variant_ids.specific_weight_uom_id',
         readonly=False,
         store=True,
-        oldname='weight_uom_id',
     )
 
 
