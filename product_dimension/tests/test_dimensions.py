@@ -17,7 +17,7 @@ class TestProduct(common.SavepointCase):
             'height': 2 * 100,
             'length': 3 * 100,
             'width': 5 * 100,
-            'dimension_uom_id': cls.env.ref('product.product_uom_cm').id,
+            'dimension_uom_id': cls.env.ref('uom.product_uom_cm').id,
             'weight': 120,
         })
 
@@ -35,7 +35,7 @@ class TestProduct(common.SavepointCase):
             'height': 1,
             'length': 1,
             'width': 1,
-            'dimension_uom_id': self.env.ref('product.product_uom_cm').id,
+            'dimension_uom_id': self.env.ref('uom.product_uom_cm').id,
             'weight': 1,
         })
         self.assertAlmostEqual(self.product.density, 1 / (0.01 * 0.01 * 0.01))
@@ -84,7 +84,7 @@ class TestProduct(common.SavepointCase):
             'height': 1,
             'length': 2,
             'width': 3,
-            'dimension_uom_id': self.env.ref('product.product_uom_meter').id,
+            'dimension_uom_id': self.env.ref('uom.product_uom_meter').id,
         })
 
         template = self.product.product_tmpl_id
@@ -96,7 +96,7 @@ class TestProduct(common.SavepointCase):
             'height': 1,
             'length': 2,
             'width': 3,
-            'dimension_uom_id': self.env.ref('product.product_uom_meter').id,
+            'dimension_uom_id': self.env.ref('uom.product_uom_meter').id,
             'weight': 60,
         })
 

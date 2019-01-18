@@ -16,17 +16,19 @@ class ProductTemplateWithWeightInKg(models.Model):
 
 
 class ProductTemplateWithWeightInUoM(models.Model):
-    """Add the fields weight_in_uom and weight_uom_id to products."""
+    """Add the fields weight_in_uom and specific_weight_uom_id to products."""
 
     _inherit = 'product.template'
 
     weight_in_uom = fields.Float(
         related='product_variant_ids.weight_in_uom',
+        readonly=False,
         store=True,
     )
 
-    weight_uom_id = fields.Many2one(
-        related='product_variant_ids.weight_uom_id',
+    specific_weight_uom_id = fields.Many2one(
+        related='product_variant_ids.specific_weight_uom_id',
+        readonly=False,
         store=True,
     )
 
@@ -38,21 +40,25 @@ class ProductTemplateWithDimensions(models.Model):
 
     height = fields.Float(
         related='product_variant_ids.height',
+        readonly=False,
         store=True,
     )
 
     length = fields.Float(
         related='product_variant_ids.length',
+        readonly=False,
         store=True,
     )
 
     width = fields.Float(
         related='product_variant_ids.width',
+        readonly=False,
         store=True,
     )
 
     dimension_uom_id = fields.Many2one(
         related='product_variant_ids.dimension_uom_id',
+        readonly=False,
         store=True,
     )
 
@@ -73,7 +79,7 @@ class ProductTemplatePropagateFieldsOnCreate(models.Model):
         template = super().create(vals)
 
         fields_to_propagate = (
-            'weight_in_uom', 'weight_uom_id',
+            'weight_in_uom', 'specific_weight_uom_id',
             'height', 'length', 'width', 'dimension_uom_id',
         )
 

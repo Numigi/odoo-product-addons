@@ -26,9 +26,9 @@
                         domain="[('has_category_length', '=', True)]" options="{'no_create': True}"
                         attrs="{'required': ['|', '|', ('length', '!=', 0), ('width', '!=', 0), ('height', '!=', 0)]}"/>
 
-                    <field name="weight_in_uom" widget="float_with_uom" uom_field="weight_uom_id"/>
-                    <label for="weight_uom_id" class="oe_edit_only"/>
-                    <field name="weight_uom_id" class="oe_edit_only" nolabel="1"
+                    <field name="weight_in_uom" widget="float_with_uom" uom_field="specific_weight_uom_id"/>
+                    <label for="specific_weight_uom_id" class="oe_edit_only"/>
+                    <field name="specific_weight_uom_id" class="oe_edit_only" nolabel="1"
                         domain="[('has_category_weight', '=', True)]" options="{'no_create': True}"
                         attrs="{'required': [('weight_in_uom', '!=', 0)]}"/>
 
