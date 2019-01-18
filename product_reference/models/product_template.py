@@ -10,4 +10,4 @@ class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
     reference_ids = fields.One2many(
-        'product.template.reference', 'product_id', copy=False)
+        'product.template.reference', 'product_id', copy=False, string='References')

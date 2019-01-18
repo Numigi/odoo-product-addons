@@ -10,9 +10,9 @@ class TestProductTemplate(common.SavepointCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.gram = cls.env.ref('product.product_uom_gram')
-        cls.kg = cls.env.ref('product.product_uom_kgm')
-        cls.cm = cls.env.ref('product.product_uom_cm')
+        cls.gram = cls.env.ref('uom.product_uom_gram')
+        cls.kg = cls.env.ref('uom.product_uom_kgm')
+        cls.cm = cls.env.ref('uom.product_uom_cm')
 
         cls.height = 30
         cls.length = 40

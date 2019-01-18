@@ -15,8 +15,8 @@ class TestProductWeightInUoM(common.SavepointCase):
             'type': 'product',
         })
 
-        cls.gram = cls.env.ref('product.product_uom_gram')
-        cls.kg = cls.env.ref('product.product_uom_kgm')
+        cls.gram = cls.env.ref('uom.product_uom_gram')
+        cls.kg = cls.env.ref('uom.product_uom_kgm')
 
     def test_when_update_weight_then_weight_in_uom_is_updated(self):
         """Test that when the weight is set, then the weight in uom is also updated."""

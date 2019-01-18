@@ -37,7 +37,7 @@ class ProductWithWeightInUoM(models.Model):
         track_visibility='onchange')
 
     specific_weight_uom_id = fields.Many2one(
-        'product.uom', 'Weight UoM', ondelete='restrict',
+        'uom.uom', 'Weight UoM', ondelete='restrict',
         track_visibility='onchange', oldname='weight_uom_id')
 
     @api.constrains('weight_in_uom')
@@ -94,13 +94,13 @@ class ProductWithWeightInUoM(models.Model):
 
     def update_weight_from_weight_in_uom(self):
         """Update the weight in kg from the weight in uom."""
-        uom_kg = self.env.ref('product.product_uom_kgm')
+        uom_kg = self.env.ref('uom.product_uom_kgm')
         weight = self.specific_weight_uom_id._compute_quantity(self.weight_in_uom, uom_kg)
         self.with_context(updating_weight_from_weight_in_uom=True).write({'weight': weight})
 
     def update_weight_in_uom_from_weight(self):
         """Update the weight in uom from the weight in kg."""
-        uom_kg = self.env.ref('product.product_uom_kgm')
+        uom_kg = self.env.ref('uom.product_uom_kgm')
         uom = self.specific_weight_uom_id or uom_kg
         weight_in_uom = uom_kg._compute_quantity(self.weight, uom)
         self.with_context(updating_weight_in_uom_from_weight=True).write({
@@ -133,7 +133,7 @@ class ProductWithDimensions(models.Model):
     )
 
     dimension_uom_id = fields.Many2one(
-        'product.uom', 'Dimension UoM', ondelete='restrict',
+        'uom.uom', 'Dimension UoM', ondelete='restrict',
         track_visibility='onchange')
 
     @api.constrains('height')
@@ -181,7 +181,7 @@ class ProductWithVolumeComputedFromDimensions(models.Model):
 
     def _get_volume_without_rounding(self):
         """Get the volume of the product without rounding the result."""
-        meter = self.env.ref('product.product_uom_meter')
+        meter = self.env.ref('uom.product_uom_meter')
 
         def to_meter(from_uom, dimension):
             """Convert a dimension from a given uom to meter.

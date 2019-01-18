@@ -22,11 +22,13 @@ class ProductTemplateWithWeightInUoM(models.Model):
 
     weight_in_uom = fields.Float(
         related='product_variant_ids.weight_in_uom',
+        readonly=False,
         store=True,
     )
 
     specific_weight_uom_id = fields.Many2one(
         related='product_variant_ids.specific_weight_uom_id',
+        readonly=False,
         store=True,
         oldname='weight_uom_id',
     )
@@ -39,21 +41,25 @@ class ProductTemplateWithDimensions(models.Model):
 
     height = fields.Float(
         related='product_variant_ids.height',
+        readonly=False,
         store=True,
     )
 
     length = fields.Float(
         related='product_variant_ids.length',
+        readonly=False,
         store=True,
     )
 
     width = fields.Float(
         related='product_variant_ids.width',
+        readonly=False,
         store=True,
     )
 
     dimension_uom_id = fields.Many2one(
         related='product_variant_ids.dimension_uom_id',
+        readonly=False,
         store=True,
     )
 

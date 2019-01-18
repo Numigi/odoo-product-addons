@@ -1,76 +1,90 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* product_reference
+# 	* product_reference
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-27 20:25+0000\n"
-"PO-Revision-Date: 2017-12-27 20:25+0000\n"
+"POT-Creation-Date: 2019-01-18 20:56+0000\n"
+"PO-Revision-Date: 2019-01-18 15:58-0500\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
+"X-Generator: Poedit 2.0.6\n"
 
 #. module: product_reference
-#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_type_active
+#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_type__active
 msgid "Active"
 msgstr "Actif"
 
 #. module: product_reference
-#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_create_uid
-#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_type_create_uid
+#: model:ir.model.fields,field_description:product_reference.field_product_template_reference__create_uid
+#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_type__create_uid
 msgid "Created by"
 msgstr ""
 
 #. module: product_reference
-#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_create_date
-#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_type_create_date
+#: model:ir.model.fields,field_description:product_reference.field_product_template_reference__create_date
+#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_type__create_date
 msgid "Created on"
 msgstr ""
 
 #. module: product_reference
-#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_display_name
-#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_type_display_name
+#: model:ir.model.fields,field_description:product_reference.field_product_template_reference__display_name
+#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_type__display_name
 msgid "Display Name"
 msgstr ""
 
 #. module: product_reference
-#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_id
-#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_type_id
+#: model:ir.model.fields,field_description:product_reference.field_product_template_reference__id
+#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_type__id
 msgid "ID"
 msgstr ""
 
 #. module: product_reference
-#: model:ir.model.fields,field_description:product_reference.field_product_template_reference___last_update
-#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_type___last_update
+#: model:ir.model.fields,field_description:product_reference.field_product_template_reference____last_update
+#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_type____last_update
 msgid "Last Modified on"
 msgstr ""
 
 #. module: product_reference
-#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_type_write_uid
-#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_write_uid
+#: model:ir.model.fields,field_description:product_reference.field_product_template_reference__write_uid
+#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_type__write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: product_reference
-#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_type_write_date
-#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_write_date
+#: model:ir.model.fields,field_description:product_reference.field_product_template_reference__write_date
+#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_type__write_date
 msgid "Last Updated on"
 msgstr ""
 
 #. module: product_reference
-#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_type_name
+#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_type__name
 msgid "Name"
 msgstr "Nom"
+
+#. module: product_reference
+#: model:ir.model.fields,field_description:product_reference.field_product_template_reference__product_id
+msgid "Product"
+msgstr "Article"
 
 #. module: product_reference
 #: model:ir.model,name:product_reference.model_product_template_reference_type
 msgid "Product Reference Type"
 msgstr "Type de référence de produit"
+
+#. module: product_reference
+#: model:ir.actions.act_window,name:product_reference.action_product_reference_type
+#: model:ir.ui.menu,name:product_reference.menu_product_reference_type
+#: model_terms:ir.ui.view,arch_db:product_reference.view_product_reference_type_tree
+msgid "Product Reference Types"
+msgstr "Types de référence de produit"
 
 #. module: product_reference
 #: model:ir.model,name:product_reference.model_product_template
@@ -83,23 +97,17 @@ msgid "Product Template Reference"
 msgstr "Référence de produit"
 
 #. module: product_reference
-#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_reference_type_id
+#: model:ir.model.fields,field_description:product_reference.field_product_template_reference__reference_type_id
 msgid "Reference Type"
 msgstr "Type de référence"
 
 #. module: product_reference
-#: model:ir.actions.act_window,name:product_reference.action_product_reference_type
-#: model:ir.ui.menu,name:product_reference.menu_product_reference_type
-#: model:ir.ui.view,arch_db:product_reference.view_product_reference_type_tree
-msgid "Product Reference Types"
-msgstr "Types de référence de produit"
-
-#. module: product_reference
-#: model:ir.ui.view,arch_db:product_reference.product_template_only_form_view_inherited
+#: model:ir.model.fields,field_description:product_reference.field_product_template__reference_ids
+#: model_terms:ir.ui.view,arch_db:product_reference.product_template_only_form_view_inherited
 msgid "References"
 msgstr "Références"
 
 #. module: product_reference
-#: model:ir.model.fields,field_description:product_reference.field_product_template_reference_value
+#: model:ir.model.fields,field_description:product_reference.field_product_template_reference__value
 msgid "Value"
 msgstr "Valeur"
