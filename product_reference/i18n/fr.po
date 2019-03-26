@@ -98,8 +98,8 @@ msgstr "Référence de produit"
 
 #. module: product_reference
 #: model:ir.model.fields,field_description:product_reference.field_product_template_reference__reference_type_id
-msgid "Reference Type"
-msgstr "Type de référence"
+msgid "Type"
+msgstr "Type"
 
 #. module: product_reference
 #: model:ir.model.fields,field_description:product_reference.field_product_template__reference_ids
