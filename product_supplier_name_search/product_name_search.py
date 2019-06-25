@@ -17,7 +17,7 @@ class ProductWithSupplierInfoSearch(models.Model):
         if operator not in positive_operators:
             return res
 
-        if len(res) < limit:
+        if limit is None or len(res) < limit:
             suppliers = self.env['product.supplierinfo'].search([
                 '|',
                 ('product_code', operator, name),
