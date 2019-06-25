@@ -98,3 +98,8 @@ class TestProductNameSearch(common.SavepointCase):
         items = self._search('WT2001', operator='!=')
         assert self.table not in items
         assert self.chair in items
+
+    def test_name_search_callable_with_none_limit(self):
+        items = self.env['product.product'].name_search('Wood', operator='like', limit=None)
+        products = self.env['product.product'].browse([el[0] for el in items])
+        assert self.table in products
