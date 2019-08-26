@@ -14,6 +14,7 @@
         'product_reference',
         'product_dimension',
         'product_supplier_name_search',
+        'product_template_tags_stock_menu',
     ],
     'installable': True,
 }
