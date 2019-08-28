@@ -11,6 +11,10 @@
     'category': 'Other',
     'summary': 'Install all addons required for testing.',
     'depends': [
+        'product_extra_views',
+        'product_extra_views_purchase',
+        'product_extra_views_sale',
+        'product_extra_views_stock',
         'product_reference',
         'product_dimension',
         'product_supplier_name_search',
