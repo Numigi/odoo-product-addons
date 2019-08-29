@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="product_variant_pivot_view" model="ir.ui.view">
+        <field name="name">Product Variant Pivot</field>
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <pivot string="Product Variants" display_quantity="True"/>
+        </field>
+    </record>
+
+    <record id="product_variant_graph_view" model="ir.ui.view">
+        <field name="name">Product Variant Graph</field>
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <graph string="Product Variants"/>
+        </field>
+    </record>
+
+</odoo>

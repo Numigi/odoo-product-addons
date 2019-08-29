@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="product_template_pivot_view" model="ir.ui.view">
+        <field name="name">Product Template Pivot</field>
+        <field name="model">product.template</field>
+        <field name="arch" type="xml">
+            <pivot string="Products" display_quantity="True"/>
+        </field>
+    </record>
+
+    <record id="product_template_graph_view" model="ir.ui.view">
+        <field name="name">Product Template Graph</field>
+        <field name="model">product.template</field>
+        <field name="arch" type="xml">
+            <graph string="Products"/>
+        </field>
+    </record>
+
+</odoo>
