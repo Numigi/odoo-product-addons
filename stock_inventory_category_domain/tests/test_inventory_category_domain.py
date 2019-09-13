@@ -32,11 +32,10 @@ class TestStockInventoryCategoryDomain(TransactionCase):
         # create two products without company and category without company.
         category = self.env['product.category'].sudo(self.user_stock_manager).create(
             {'name': 'Category', 'company_id': False})
-        product1 = self.env['product.template'].sudo(self.user_stock_manager).create(
-            {'name': 'Product 1', 'categ_id': category.id, 'company_id': False})
-        product2 = self.env['product.template'].sudo(self.user_stock_manager).create(
-            {'name': 'Product 2', 'categ_id': category.id, 'company_id': False})
-        print('-----', category.company_id, product1.company_id, product2.company_id)
+        self.env['product.template'].sudo(self.user_stock_manager).create([
+            {'name': 'Product 1', 'categ_id': category.id, 'company_id': False},
+            {'name': 'Product 2', 'categ_id': category.id, 'company_id': False}
+        ])
         # update category to set the company should have message:
         # A products not related to a company are part of this category. products of a category on which a company is defined must be defined on the same company.
         with self.assertRaises(ValidationError):
