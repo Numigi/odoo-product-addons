@@ -18,6 +18,7 @@
         'product_reference',
         'product_dimension',
         'product_supplier_name_search',
+        'stock_inventory_category_domain',
     ],
     'installable': True,
 }
