@@ -1,6 +1,13 @@
 FROM quay.io/numigi/odoo-public:12.latest
 MAINTAINER numigi <contact@numigi.com>
 
+USER root
+
+COPY .docker_files/test-requirements.txt .
+RUN pip3 install -r test-requirements.txt
+
+USER odoo
+
 COPY product_extra_views /mnt/extra-addons/product_extra_views
 COPY product_extra_views_purchase /mnt/extra-addons/product_extra_views_purchase
 COPY product_extra_views_sale /mnt/extra-addons/product_extra_views_sale

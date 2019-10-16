@@ -1,9 +1,11 @@
 # © 2018 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
+from ddt import data, ddt
 from odoo.tests import common
 
 
+@ddt
 class TestProductNameSearch(common.SavepointCase):
 
     @classmethod
@@ -99,7 +101,14 @@ class TestProductNameSearch(common.SavepointCase):
         assert self.table not in items
         assert self.chair in items
 
-    def test_name_search_callable_with_none_limit(self):
-        items = self.env['product.product'].name_search('Wood', operator='like', limit=None)
+    @data(
+        'Wood',
+        'Brown',
+        'Table',
+        'WT2001',
+        'BT1001',
+    )
+    def test_name_search_callable_with_none_limit(self, query):
+        items = self.env['product.product'].name_search(query, operator='like', limit=None)
         products = self.env['product.product'].browse([el[0] for el in items])
         assert self.table in products

@@ -26,11 +26,11 @@ class ProductWithSupplierInfoSearch(models.Model):
 
             if suppliers:
                 product_ids_already_found = [p[0] for p in res]
-
+                remaining_limit = limit - len(res) if limit else None
                 products_from_supplier_info = self.search([
                     ('product_tmpl_id.seller_ids', 'in', suppliers.ids),
                     ('id', 'not in', product_ids_already_found),
-                ], limit=limit - len(res))
+                ], limit=remaining_limit)
 
                 res += products_from_supplier_info.name_get()
 
