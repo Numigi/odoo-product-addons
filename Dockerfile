@@ -3,6 +3,9 @@ MAINTAINER numigi <contact@numigi.com>
 
 USER root
 
+COPY .docker_files/test-requirements.txt .
+RUN pip3 install -r test-requirements.txt
+
 # Variable used for fetching private git repositories.
 ARG GIT_TOKEN
 
