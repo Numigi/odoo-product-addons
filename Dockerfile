@@ -8,6 +8,7 @@ RUN pip3 install -r test-requirements.txt
 
 USER odoo
 
+COPY product_create_group /mnt/extra-addons/product_create_group
 COPY product_extra_views /mnt/extra-addons/product_extra_views
 COPY product_extra_views_purchase /mnt/extra-addons/product_extra_views_purchase
 COPY product_extra_views_sale /mnt/extra-addons/product_extra_views_sale
