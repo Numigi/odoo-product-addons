@@ -12,9 +12,11 @@
     'summary': 'Add a group to create/edit products and variants',
     'depends': [
         'product',
+        'base_extended_security',
     ],
     'data': [
         'security/res_groups.xml',
+        'security/extended_security_rule.xml',
         'security/ir.model.access.csv',
     ],
     'installable': True,
