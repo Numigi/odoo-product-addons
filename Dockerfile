@@ -24,6 +24,7 @@ COPY product_extra_views_stock /mnt/extra-addons/product_extra_views_stock
 COPY product_dimension /mnt/extra-addons/product_dimension
 COPY product_reference /mnt/extra-addons/product_reference
 COPY product_supplier_name_search /mnt/extra-addons/product_supplier_name_search
+COPY product_variant_button_complete_form /mnt/extra-addons/product_variant_button_complete_form
 
 COPY .docker_files/main /mnt/extra-addons/main
 COPY .docker_files/odoo.conf /etc/odoo

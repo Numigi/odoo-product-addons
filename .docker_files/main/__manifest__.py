@@ -19,6 +19,7 @@
         'product_reference',
         'product_dimension',
         'product_supplier_name_search',
+        'product_variant_button_complete_form',
     ],
     'installable': True,
 }
