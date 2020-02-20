@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="product.product_variant_action" model="ir.actions.act_window">
+        <field name="view_ids" eval="[(5, 0, 0)]"/>
+    </record>
+
+</odoo>
