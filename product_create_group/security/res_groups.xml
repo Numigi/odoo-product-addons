@@ -3,6 +3,7 @@
 
     <record id="group_product_create" model="res.groups">
         <field name="name">Manage Products and Variants</field>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
     </record>
 
 </odoo>
