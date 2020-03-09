@@ -1,0 +1,34 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* product_panel_shortcut
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-24 15:00+0000\n"
+"PO-Revision-Date: 2019-04-24 15:00+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_panel_shortcut
+#: model:ir.ui.menu,name:product_panel_shortcut.menu_catalog
+msgid "Catalog"
+msgstr "Catalogue"
+
+#. module: product_panel_shortcut
+#: model:ir.ui.menu,name:product_panel_shortcut.menu_product_variants
+#: model:ir.actions.act_window,name:product_panel_shortcut.action_product_variants
+msgid "Product Variants"
+msgstr "Variantes d'articles"
+
+#. module: product_panel_shortcut
+#: model:ir.actions.act_window,name:product_panel_shortcut.action_products
+#: model:ir.ui.menu,name:product_panel_shortcut.menu_product_root
+#: model:ir.ui.menu,name:product_panel_shortcut.menu_products
+msgid "Products"
+msgstr "Articles"
