@@ -1,0 +1,35 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* product_reference_list_view
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-10 22:54+0000\n"
+"PO-Revision-Date: 2020-03-10 22:54+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_reference_list_view
+#: model:ir.actions.act_window,name:product_reference_list_view.action_product_references
+#: model:ir.ui.menu,name:product_reference_list_view.menu_inventory_product_reference
+#: model:ir.ui.menu,name:product_reference_list_view.menu_product_reference
+#: model_terms:ir.ui.view,arch_db:product_reference_list_view.view_product_reference_tree
+msgid "Product References"
+msgstr "Références d'articles"
+
+#. module: product_reference_list_view
+#: model_terms:ir.ui.view,arch_db:product_reference_list_view.view_product_reference_tree
+msgid "Ref"
+msgstr "Réf"
+
+#. module: product_reference_list_view
+#: model_terms:ir.ui.view,arch_db:product_reference_list_view.view_product_reference_tree
+msgid "Ref Type"
+msgstr "Type Réf"
+
