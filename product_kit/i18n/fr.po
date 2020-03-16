@@ -1,0 +1,105 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* product_kit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-13 13:49+0000\n"
+"PO-Revision-Date: 2020-03-13 13:49+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_kit
+#: code:addons/product_kit/models/product_template.py:28
+#, python-format
+msgid "A kit must strictly be a product of type service."
+msgstr "Un kit doit strictement être un article de type service."
+
+#. module: product_kit
+#: model:ir.model.fields,field_description:product_kit.field_product_kit_line__component_id
+msgid "Component"
+msgstr "Composante"
+
+#. module: product_kit
+#: model:ir.model.fields,field_description:product_kit.field_product_kit_line__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: product_kit
+#: model:ir.model.fields,field_description:product_kit.field_product_kit_line__create_date
+msgid "Created on"
+msgstr "Modifié le"
+
+#. module: product_kit
+#: model:ir.model.fields,field_description:product_kit.field_product_kit_line__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: product_kit
+#: model:ir.model.fields,field_description:product_kit.field_product_kit_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: product_kit
+#: model:ir.model.fields,field_description:product_kit.field_product_kit_line__is_important
+msgid "Is Important"
+msgstr "Est un article important"
+
+#. module: product_kit
+#: model:ir.model.fields,field_description:product_kit.field_product_product__is_kit
+#: model:ir.model.fields,field_description:product_kit.field_product_template__is_kit
+msgid "Is a Kit"
+msgstr "Est un kit"
+
+#. module: product_kit
+#: model_terms:ir.ui.view,arch_db:product_kit.product_template_form
+msgid "Kit"
+msgstr "Kit"
+
+#. module: product_kit
+#: model:ir.model.fields,field_description:product_kit.field_product_product__kit_line_ids
+#: model:ir.model.fields,field_description:product_kit.field_product_template__kit_line_ids
+msgid "Kit Components"
+msgstr "Composantes de kits"
+
+#. module: product_kit
+#: model:ir.model.fields,field_description:product_kit.field_product_kit_line____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: product_kit
+#: model:ir.model.fields,field_description:product_kit.field_product_kit_line__write_uid
+msgid "Last Updated by"
+msgstr "Dernière modification par"
+
+#. module: product_kit
+#: model:ir.model.fields,field_description:product_kit.field_product_kit_line__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: product_kit
+#: model:ir.model,name:product_kit.model_product_product
+msgid "Product"
+msgstr "Article"
+
+#. module: product_kit
+#: model:ir.model,name:product_kit.model_product_kit_line
+msgid "Product Kit Component Line"
+msgstr "Ligne de composante de kit sur article"
+
+#. module: product_kit
+#: model:ir.model,name:product_kit.model_product_template
+#: model:ir.model.fields,field_description:product_kit.field_product_kit_line__product_template_id
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: product_kit
+#: model:ir.model.fields,field_description:product_kit.field_product_kit_line__sequence
+msgid "Sequence"
+msgstr "Séquence"
