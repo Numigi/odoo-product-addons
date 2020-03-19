@@ -1,19 +1,21 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* product_kit
+# 	* product_kit
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-13 13:49+0000\n"
-"PO-Revision-Date: 2020-03-13 13:49+0000\n"
+"POT-Creation-Date: 2020-03-19 21:01+0000\n"
+"PO-Revision-Date: 2020-03-19 17:03-0400\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
+"X-Generator: Poedit 2.0.6\n"
 
 #. module: product_kit
 #: code:addons/product_kit/models/product_template.py:28
@@ -69,6 +71,11 @@ msgid "Kit Components"
 msgstr "Composantes de kits"
 
 #. module: product_kit
+#: model_terms:ir.ui.view,arch_db:product_kit.product_template_search
+msgid "Kits"
+msgstr ""
+
+#. module: product_kit
 #: model:ir.model.fields,field_description:product_kit.field_product_kit_line____last_update
 msgid "Last Modified on"
 msgstr "Dernière modification le"
@@ -100,6 +107,28 @@ msgid "Product Template"
 msgstr "Modèle d'article"
 
 #. module: product_kit
+#: model:ir.model.fields,field_description:product_kit.field_product_kit_line__quantity
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: product_kit
 #: model:ir.model.fields,field_description:product_kit.field_product_kit_line__sequence
 msgid "Sequence"
 msgstr "Séquence"
+
+#. module: product_kit
+#: code:addons/product_kit/models/product_kit_line.py:46
+#, python-format
+msgid ""
+"The component {component} is defined on the kit {kit} with the unit "
+"of measure {uom}. This unit of measure is incompatible with the unit of "
+"measure defined on the component ({component_uom})."
+msgstr ""
+"La composante {component} est définie sur le kit {kit} avec l'unité "
+"de mesure {uom}. Cette unité de mesure est incompatible avec l'unité de "
+"mesure définie sur la composante ({component_uom})."
+
+#. module: product_kit
+#: model:ir.model.fields,field_description:product_kit.field_product_kit_line__uom_id
+msgid "Unit of Measure"
+msgstr "Unité de mesure"
