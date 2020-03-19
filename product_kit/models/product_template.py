@@ -27,3 +27,10 @@ class ProductTemplate(models.Model):
                 raise ValidationError(
                     _("A kit must strictly be a product of type service.")
                 )
+
+    @api.constrains("uom_id")
+    def _check_related_kit_line_uom(self):
+        kit_lines = self.env["product.kit.line"].search(
+            [("component_id.product_tmpl_id", "in", self.ids)]
+        )
+        kit_lines._check_component_uom_category()

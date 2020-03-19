@@ -10,10 +10,33 @@ class TestProduct(common.SavepointCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        cls.uom_dozen = cls.env.ref("uom.product_uom_dozen")
+        cls.uom_unit = cls.env.ref("uom.product_uom_unit")
+        cls.uom_day = cls.env.ref("uom.product_uom_day")
+        cls.component = cls.env["product.product"].create(
+            {"name": "My Component", "type": "consu", "uom_id": cls.uom_unit.id}
+        )
         cls.product = cls.env["product.product"].create(
-            {"name": "My Kit", "is_kit": True, "type": "service"}
+            {
+                "name": "My Kit",
+                "is_kit": True,
+                "type": "service",
+                "kit_line_ids": [
+                    (
+                        0,
+                        0,
+                        {"component_id": cls.component.id, "uom_id": cls.uom_dozen.id},
+                    )
+                ],
+            }
         )
 
     def test_kit_must_be_a_service(self):
         with pytest.raises(ValidationError):
             self.product.type = "consu"
+
+    def test_component_uom_category(self):
+        with pytest.raises(ValidationError):
+            self.component.write(
+                {"uom_id": self.uom_day.id, "uom_po_id": self.uom_day.id}
+            )
