@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="product_normal_form_view_with_upc" model="ir.ui.view">
+        <field name="name">Product Product Form: add field UPC</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <field name="barcode" position="after">
+                <field name="upc"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="product_variant_easy_edit_view_with_upc" model="ir.ui.view">
+        <field name="name">Product Variant Easy Edit Form: add field UPC</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_variant_easy_edit_view"/>
+        <field name="arch" type="xml">
+            <field name="barcode" position="after">
+                <field name="upc"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="product_search_form_view_with_upc" model="ir.ui.view">
+        <field name="name">Product Product Search: search Product by UPC</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_search_form_view"/>
+        <field name="arch" type="xml">
+            <field name="name" position="attributes">
+                <attribute name="filter_domain">[
+                    '|', '|', '|',
+                    ('default_code', 'ilike', self),
+                    ('name', 'ilike', self),
+                    ('barcode', 'ilike', self),
+                    ('upc', 'ilike', self)
+                ]</attribute>
+            </field>
+        </field>
+    </record>
+
+</odoo>
