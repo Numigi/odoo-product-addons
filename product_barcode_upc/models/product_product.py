@@ -31,6 +31,9 @@ class ProductProduct(models.Model):
 
     @api.model
     def _name_search(self, name, args=None, operator='ilike', limit=100, name_get_uid=None):
+        res = super()._name_search(name, args, operator, limit, name_get_uid)
+        if res:
+            return res
         args = args or []
         positive_operators = ['=', 'ilike', '=ilike', 'like', '=like']
         product_ids = []
@@ -38,5 +41,4 @@ class ProductProduct(models.Model):
             product_ids = self._search([('upc', '=', name)] + args, limit=limit, access_rights_uid=name_get_uid)
         if product_ids:
             return self.browse(product_ids).name_get()
-        else:
-            return super()._name_search(name, args, operator, limit, name_get_uid)
+        return res
