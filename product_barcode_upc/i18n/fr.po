@@ -17,7 +17,7 @@ msgstr ""
 
 #. module: product_barcode_upc
 #: sql_constraint:product.product:0
-msgid "An UPC can only be assigned to one product !"
+msgid "A UPC can only be assigned to one product!"
 msgstr ""
 
 #. module: product_barcode_upc
