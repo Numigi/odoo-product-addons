@@ -10,7 +10,7 @@ class ProductProduct(models.Model):
     upc = fields.Char("UPC", copy=False)
 
     _sql_constraints = [
-        ('upc_uniq', 'unique(upc)', "An UPC can only be assigned to one product !"),
+        ('upc_uniq', 'unique(upc)', "A UPC can only be assigned to one product !"),
     ]
 
     @api.model
