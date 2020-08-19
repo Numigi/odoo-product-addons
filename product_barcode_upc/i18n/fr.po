@@ -23,7 +23,7 @@ msgstr "Un code UPC ne peut être assigné qu'à un seul produit!"
 #. module: product_barcode_upc
 #: model_terms:ir.ui.view,arch_db:product_barcode_upc.product_template_search_view_with_upc
 msgid "Barcode"
-msgstr ""
+msgstr "Code barre"
 
 #. module: product_barcode_upc
 #: model:ir.model,name:product_barcode_upc.model_product_product
