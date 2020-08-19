@@ -42,7 +42,7 @@ msgstr ""
 
 #. module: product_barcode_upc
 #: model_terms:ir.ui.view,arch_db:product_barcode_upc.product_template_search_view_with_upc
-msgid "Show all records which have UPC is defined"
+msgid "Show all records which have a UPC defined"
 msgstr ""
 
 #. module: product_barcode_upc
