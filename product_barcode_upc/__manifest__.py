@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Product Barcode UPC",
-    "summary": "",
+    "summary": "Add a UPC field (barcode alternative) to Products",
     "version": "12.0.1.0.0",
     "website": "https://bit.ly/numigi-com",
     "author": "Numigi",
