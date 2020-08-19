@@ -30,7 +30,7 @@
             <filter name="activities_upcoming_all" position="after">
                 <separator/>
                 <filter string="Barcode" name="exist_barcode" domain="[('barcode', '!=', None)]" help="Show all records which have a Barcode defined"/>
-                <filter string="UPC" name="exist_upc" domain="[('upc', '!=', None)]" help="Show all records which have UPC is defined"/>
+                <filter string="UPC" name="exist_upc" domain="[('upc', '!=', None)]" help="Show all records which have a UPC defined"/>
             </filter>
         </field>
     </record>
