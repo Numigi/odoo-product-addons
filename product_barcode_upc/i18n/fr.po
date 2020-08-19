@@ -42,8 +42,8 @@ msgstr "Voir tous les Articles qui ont un Code Barre"
 
 #. module: product_barcode_upc
 #: model_terms:ir.ui.view,arch_db:product_barcode_upc.product_template_search_view_with_upc
-msgid "Voir tous les Articles qui ont un UPC"
-msgstr ""
+msgid "Show all records which have a UPC defined"
+msgstr "Voir tous les Articles qui ont un UPC"
 
 #. module: product_barcode_upc
 #: model:ir.model.fields,field_description:product_barcode_upc.field_product_product__upc
