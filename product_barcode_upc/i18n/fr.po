@@ -18,7 +18,7 @@ msgstr ""
 #. module: product_barcode_upc
 #: sql_constraint:product.product:0
 msgid "A UPC can only be assigned to one product!"
-msgstr "Un code UPC ne peut être assigné qu'à un seul produit!"
+msgstr "Un code UPC ne peut être assigné qu'à un seul article!"
 
 #. module: product_barcode_upc
 #: model_terms:ir.ui.view,arch_db:product_barcode_upc.product_template_search_view_with_upc
