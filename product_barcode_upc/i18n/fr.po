@@ -28,7 +28,7 @@ msgstr "Code barre"
 #. module: product_barcode_upc
 #: model:ir.model,name:product_barcode_upc.model_product_product
 msgid "Product"
-msgstr "Produit"
+msgstr "Variante d'article"
 
 #. module: product_barcode_upc
 #: model:ir.model,name:product_barcode_upc.model_product_template
