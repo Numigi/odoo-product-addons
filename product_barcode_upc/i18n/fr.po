@@ -33,7 +33,7 @@ msgstr "Variante d'article"
 #. module: product_barcode_upc
 #: model:ir.model,name:product_barcode_upc.model_product_template
 msgid "Product Template"
-msgstr ""
+msgstr "Article"
 
 #. module: product_barcode_upc
 #: model_terms:ir.ui.view,arch_db:product_barcode_upc.product_template_search_view_with_upc
