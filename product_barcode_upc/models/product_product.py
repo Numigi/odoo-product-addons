@@ -17,15 +17,9 @@ class ProductProduct(models.Model):
     def get_all_products_by_barcode(self):
         res = super().get_all_products_by_barcode()
         products = self.search_read(
-            [
-                ("upc", "not in", list(res.keys())),
-                "|",
-                ("barcode", "!=", None),
-                ("upc", "!=", None),
-                ("type", "!=", "service")],
-            ["upc", "display_name", "uom_id", "tracking"]
+            [("upc", "!=", None), ("type", "!=", "service")], ["upc", "display_name", "uom_id", "tracking"]
         )
-        products_by_upc = {product.pop("upc"): product for product in products}
+        products_by_upc = {product.pop("upc"): product for product in products if product["upc"] not in res}
         res.update(products_by_upc)
         return res
 
