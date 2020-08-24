@@ -2,13 +2,12 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Product Barcode UPC",
-    "summary": "Add a UPC field (barcode alternative) to Products",
+    "summary": "Integrate UPC codes with the barcode application",
     "version": "12.0.1.0.0",
     "website": "https://bit.ly/numigi-com",
     "author": "Numigi",
     "maintainer": "Numigi",
     "license": "AGPL-3",
-    "depends": ["barcode"],
-    "data": ["views/product_product.xml", "views/product_template.xml"],
+    "depends": ["stock_barcode", "product_barcode_upc"],
     "installable": True,
 }

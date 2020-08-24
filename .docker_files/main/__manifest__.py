@@ -11,6 +11,7 @@
     "category": "Other",
     "summary": "Install all addons required for testing.",
     "depends": [
+        "product_barcode_upc",
         "product_create_group",
         "product_extra_views",
         "product_extra_views_purchase",
@@ -21,6 +22,7 @@
         "product_dimension",
         "product_supplier_name_search",
         "product_variant_button_complete_form",
+        "stock_barcode_upc",
     ],
     "installable": True,
 }

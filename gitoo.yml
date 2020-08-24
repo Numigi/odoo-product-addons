@@ -2,3 +2,6 @@
   branch: "12.0"
   includes:
     - base_extended_security
+
+- url: https://{{GIT_TOKEN}}@github.com/Numigi/odoo-enterprise
+  branch: "12.0"

@@ -10,29 +10,23 @@ class ProductProduct(models.Model):
     upc = fields.Char("UPC", copy=False)
 
     _sql_constraints = [
-        ('upc_uniq', 'unique(upc)', "A UPC can only be assigned to one product!"),
+        ("upc_uniq", "unique(upc)", "A UPC can only be assigned to one product!")
     ]
 
     @api.model
-    def get_all_products_by_barcode(self):
-        res = super().get_all_products_by_barcode()
-        products = self.search_read(
-            [("upc", "!=", None), ("type", "!=", "service")], ["upc", "display_name", "uom_id", "tracking"]
-        )
-        products_by_upc = {product.pop("upc"): product for product in products if product["upc"] not in res}
-        res.update(products_by_upc)
-        return res
-
-    @api.model
-    def _name_search(self, name, args=None, operator='ilike', limit=100, name_get_uid=None):
+    def _name_search(
+        self, name, args=None, operator="ilike", limit=100, name_get_uid=None
+    ):
         res = super()._name_search(name, args, operator, limit, name_get_uid)
         if res:
             return res
         args = args or []
-        positive_operators = ['=', 'ilike', '=ilike', 'like', '=like']
+        positive_operators = ["=", "ilike", "=ilike", "like", "=like"]
         product_ids = []
         if name and operator in positive_operators:
-            product_ids = self._search([('upc', '=', name)] + args, limit=limit, access_rights_uid=name_get_uid)
+            product_ids = self._search(
+                [("upc", "=", name)] + args, limit=limit, access_rights_uid=name_get_uid
+            )
         if product_ids:
             return self.browse(product_ids).name_get()
         return res
