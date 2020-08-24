@@ -8,7 +8,7 @@
     "author": "Numigi",
     "maintainer": "Numigi",
     "license": "AGPL-3",
-    "depends": ["barcode"],
+    "depends": ["product"],
     "data": ["views/product_product.xml", "views/product_template.xml"],
     "installable": True,
 }
