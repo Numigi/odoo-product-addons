@@ -1,0 +1,54 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* product_barcode_upc
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-19 06:37+0000\n"
+"PO-Revision-Date: 2020-08-19 06:37+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_barcode_upc
+#: sql_constraint:product.product:0
+msgid "A UPC can only be assigned to one product!"
+msgstr "Un code UPC ne peut être assigné qu'à un seul article!"
+
+#. module: product_barcode_upc
+#: model_terms:ir.ui.view,arch_db:product_barcode_upc.product_template_search_view_with_upc
+msgid "Barcode"
+msgstr "Code barre"
+
+#. module: product_barcode_upc
+#: model:ir.model,name:product_barcode_upc.model_product_product
+msgid "Product"
+msgstr "Variante d'article"
+
+#. module: product_barcode_upc
+#: model:ir.model,name:product_barcode_upc.model_product_template
+msgid "Product Template"
+msgstr "Article"
+
+#. module: product_barcode_upc
+#: model_terms:ir.ui.view,arch_db:product_barcode_upc.product_template_search_view_with_upc
+msgid "Show all records which have a Barcode defined"
+msgstr "Voir tous les Articles qui ont un Code Barre"
+
+#. module: product_barcode_upc
+#: model_terms:ir.ui.view,arch_db:product_barcode_upc.product_template_search_view_with_upc
+msgid "Show all records which have a UPC defined"
+msgstr "Voir tous les Articles qui ont un UPC"
+
+#. module: product_barcode_upc
+#: model:ir.model.fields,field_description:product_barcode_upc.field_product_product__upc
+#: model:ir.model.fields,field_description:product_barcode_upc.field_product_template__upc
+#: model_terms:ir.ui.view,arch_db:product_barcode_upc.product_template_search_view_with_upc
+msgid "UPC"
+msgstr "UPC"
+
