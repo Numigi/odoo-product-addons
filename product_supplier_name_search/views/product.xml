@@ -9,6 +9,27 @@
             <field name="name" position="attributes">
                 <attribute name="filter_domain">
                     [
+                        '|', '|', '|', '|', '|',
+                        ('default_code','ilike', self),
+                        ('product_variant_ids.default_code','ilike', self),
+                        ('name','ilike', self),
+                        ('barcode','ilike', self),
+                        ('seller_ids.product_name','ilike', self),
+                        ('seller_ids.product_code','ilike', self),
+                    ]
+                </attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="product_product_search_with_supplier_info" model="ir.ui.view">
+        <field name="name">Product Search: Add Search in Supplier Info</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_search_form_view"/>
+        <field name="arch" type="xml">
+            <field name="name" position="attributes">
+                <attribute name="filter_domain">
+                    [
                         '|', '|', '|', '|',
                         ('default_code','ilike', self),
                         ('name','ilike', self),
