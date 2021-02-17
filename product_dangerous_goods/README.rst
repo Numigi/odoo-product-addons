@@ -3,18 +3,13 @@ Product Dangerous Goods
 
 Description
 -----------
+This module adds a new option ``Is Dangerous Goods`` on products.
 
-This module adds a new option "Is Dangerous Goods" on template and variant form
 .. image:: static/description/product_dangerous_option.png
 
-This module also adds these fields: UN number, shipping name, Hazard class, Packing group and only shown when "Is Dangerous Goods" is checked
+When the box is checked, a new tab ``Dangerous Goods`` is available.
+
 .. image:: static/description/new_dangerous_product_fields.png
-
-
-Configuration
--------------
-
-No configuration required apart from module installation.
 
 Contributors
 ------------

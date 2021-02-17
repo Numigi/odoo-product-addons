@@ -12,6 +12,7 @@
     "summary": "Install all addons required for testing.",
     "depends": [
         "product_create_group",
+        "product_dangerous_goods",
         "product_extra_views",
         "product_extra_views_purchase",
         "product_extra_views_sale",

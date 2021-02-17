@@ -32,7 +32,7 @@ msgstr "Classe 3, Liquides inflammables"
 
 #. module: product_dangerous_goods
 #: selection:product.template,hazard_class:0
-msgid "Class 4 Substances/Products"
+msgid "Class 4 Substances / Products"
 msgstr "Classe 4, Substances / produits"
 
 #. module: product_dangerous_goods
@@ -57,7 +57,7 @@ msgstr "Classe 8, Matières corrosives"
 
 #. module: product_dangerous_goods
 #: selection:product.template,hazard_class:0
-msgid "Class 9 Miscellaneous Products,Substances or Organisms"
+msgid "Class 9 Miscellaneous Products, Substances or Organisms"
 msgstr "Classe 9, Produits, matières ou organismes divers"
 
 #. module: product_dangerous_goods
@@ -88,10 +88,10 @@ msgid "Is a Dangerous Good"
 msgstr "Est une matière dangereuse"
 
 #. module: product_dangerous_goods
-#: model:ir.model.fields,field_description:product_dangerous_goods.field_product_product__notes
-#: model:ir.model.fields,field_description:product_dangerous_goods.field_product_template__notes
-msgid "Notes"
-msgstr ""
+#: model:ir.model.fields,field_description:product_dangerous_goods.field_product_product__dangerous_good_notes
+#: model:ir.model.fields,field_description:product_dangerous_goods.field_product_template__dangerous_good_notes
+msgid "Dangerous Good Notes"
+msgstr "Notes pour matières dangereuses"
 
 #. module: product_dangerous_goods
 #: model:ir.model.fields,field_description:product_dangerous_goods.field_product_product__packing_group
@@ -115,4 +115,3 @@ msgstr "Appellation réglementaire"
 #: model:ir.model.fields,field_description:product_dangerous_goods.field_product_template__un_number
 msgid "UN Number"
 msgstr "Numéro UN"
-

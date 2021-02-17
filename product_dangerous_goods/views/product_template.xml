@@ -21,7 +21,7 @@
                             <field name="shipping_name" attrs="{'required': [('is_dangerous_good', '=', True)]}"/>
                             <field name="hazard_class" attrs="{'required': [('is_dangerous_good', '=', True)]}"/>
                             <field name="packing_group" attrs="{'required': [('is_dangerous_good', '=', True)]}"/>
-                            <field name="notes"/>
+                            <field name="dangerous_good_notes" string="Notes"/>
                         </group>
                     </group>
                 </page>
