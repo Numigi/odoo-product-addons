@@ -18,6 +18,7 @@ USER odoo
 
 COPY product_barcode_upc /mnt/extra-addons/product_barcode_upc
 COPY product_create_group /mnt/extra-addons/product_create_group
+COPY product_dangerous_goods /mnt/extra-addons/product_dangerous_goods
 COPY product_dimension /mnt/extra-addons/product_dimension
 COPY product_extra_views /mnt/extra-addons/product_extra_views
 COPY product_extra_views_purchase /mnt/extra-addons/product_extra_views_purchase

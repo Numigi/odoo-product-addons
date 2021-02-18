@@ -1,0 +1,117 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* product_dangerous_goods
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-17 03:56+0000\n"
+"PO-Revision-Date: 2021-02-17 03:56+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_dangerous_goods
+#: selection:product.template,hazard_class:0
+msgid "Class 1 Explosives"
+msgstr "Classe 1, Explosifs"
+
+#. module: product_dangerous_goods
+#: selection:product.template,hazard_class:0
+msgid "Class 2 Gases"
+msgstr "Classe 2, Gaz"
+
+#. module: product_dangerous_goods
+#: selection:product.template,hazard_class:0
+msgid "Class 3 Flammable Liquids"
+msgstr "Classe 3, Liquides inflammables"
+
+#. module: product_dangerous_goods
+#: selection:product.template,hazard_class:0
+msgid "Class 4 Substances / Products"
+msgstr "Classe 4, Substances / produits"
+
+#. module: product_dangerous_goods
+#: selection:product.template,hazard_class:0
+msgid "Class 5 Oxidizing Substances"
+msgstr "Classe 5, Matières comburantes et peroxydes organiques"
+
+#. module: product_dangerous_goods
+#: selection:product.template,hazard_class:0
+msgid "Class 6 Toxic and Infectious Substances"
+msgstr "Classe 6, Matières toxiques et matières infectieuses"
+
+#. module: product_dangerous_goods
+#: selection:product.template,hazard_class:0
+msgid "Class 7 Radioactive Materials"
+msgstr "Classe 7, Matières radioactives"
+
+#. module: product_dangerous_goods
+#: selection:product.template,hazard_class:0
+msgid "Class 8 Corrosive Substances"
+msgstr "Classe 8, Matières corrosives"
+
+#. module: product_dangerous_goods
+#: selection:product.template,hazard_class:0
+msgid "Class 9 Miscellaneous Products, Substances or Organisms"
+msgstr "Classe 9, Produits, matières ou organismes divers"
+
+#. module: product_dangerous_goods
+#: model_terms:ir.ui.view,arch_db:product_dangerous_goods.product_template_form_view_dangerous_goods
+msgid "Dangerous Goods"
+msgstr "Matières dangereuses"
+
+#. module: product_dangerous_goods
+#: model:ir.model.fields,field_description:product_dangerous_goods.field_product_product__hazard_class
+#: model:ir.model.fields,field_description:product_dangerous_goods.field_product_template__hazard_class
+msgid "Hazard Class"
+msgstr "Classe de risque"
+
+#. module: product_dangerous_goods
+#: selection:product.template,packing_group:0
+msgid "II"
+msgstr ""
+
+#. module: product_dangerous_goods
+#: selection:product.template,packing_group:0
+msgid "III"
+msgstr ""
+
+#. module: product_dangerous_goods
+#: model:ir.model.fields,field_description:product_dangerous_goods.field_product_product__is_dangerous_good
+#: model:ir.model.fields,field_description:product_dangerous_goods.field_product_template__is_dangerous_good
+msgid "Is a Dangerous Good"
+msgstr "Est une matière dangereuse"
+
+#. module: product_dangerous_goods
+#: model:ir.model.fields,field_description:product_dangerous_goods.field_product_product__dangerous_good_notes
+#: model:ir.model.fields,field_description:product_dangerous_goods.field_product_template__dangerous_good_notes
+msgid "Dangerous Good Notes"
+msgstr "Notes pour matières dangereuses"
+
+#. module: product_dangerous_goods
+#: model:ir.model.fields,field_description:product_dangerous_goods.field_product_product__packing_group
+#: model:ir.model.fields,field_description:product_dangerous_goods.field_product_template__packing_group
+msgid "Packing Group"
+msgstr "Groupe d'emballage"
+
+#. module: product_dangerous_goods
+#: model:ir.model,name:product_dangerous_goods.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: product_dangerous_goods
+#: model:ir.model.fields,field_description:product_dangerous_goods.field_product_product__shipping_name
+#: model:ir.model.fields,field_description:product_dangerous_goods.field_product_template__shipping_name
+msgid "Shipping Name"
+msgstr "Appellation réglementaire"
+
+#. module: product_dangerous_goods
+#: model:ir.model.fields,field_description:product_dangerous_goods.field_product_product__un_number
+#: model:ir.model.fields,field_description:product_dangerous_goods.field_product_template__un_number
+msgid "UN Number"
+msgstr "Numéro UN"
