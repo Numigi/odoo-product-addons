@@ -5,3 +5,8 @@
 
 - url: https://{{GIT_TOKEN}}@github.com/Numigi/odoo-enterprise
   branch: "12.0"
+
+- url: https://github.com/OCA/product-attribute
+  branch: "12.0"
+  includes:
+    - product_template_tags

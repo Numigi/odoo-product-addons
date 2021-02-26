@@ -29,6 +29,7 @@ COPY product_panel_shortcut /mnt/extra-addons/product_panel_shortcut
 COPY product_reference /mnt/extra-addons/product_reference
 COPY product_reference_list_view /mnt/extra-addons/product_reference_list_view
 COPY product_supplier_name_search /mnt/extra-addons/product_supplier_name_search
+COPY product_template_tags_stock_menu /mnt/extra-addons/product_template_tags_stock_menu
 COPY product_variant_button_complete_form /mnt/extra-addons/product_variant_button_complete_form
 COPY stock_barcode_upc /mnt/extra-addons/stock_barcode_upc
 
