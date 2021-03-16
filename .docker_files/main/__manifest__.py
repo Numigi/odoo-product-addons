@@ -12,6 +12,7 @@
     "summary": "Install all addons required for testing.",
     "depends": [
         "product_barcode_upc",
+        "product_brand_archive",
         "product_create_group",
         "product_dangerous_goods",
         "product_dimension",

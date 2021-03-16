@@ -17,6 +17,7 @@ RUN gitoo install-all --conf_file /gitoo.yml --destination "${THIRD_PARTY_ADDONS
 USER odoo
 
 COPY product_barcode_upc /mnt/extra-addons/product_barcode_upc
+COPY product_brand_archive /mnt/extra-addons/product_brand_archive
 COPY product_create_group /mnt/extra-addons/product_create_group
 COPY product_dangerous_goods /mnt/extra-addons/product_dangerous_goods
 COPY product_dimension /mnt/extra-addons/product_dimension
