@@ -9,4 +9,5 @@
 - url: https://github.com/OCA/product-attribute
   branch: "12.0"
   includes:
+    - product_brand
     - product_template_tags
