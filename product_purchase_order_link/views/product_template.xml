@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="product_template_form" model="ir.ui.view">
+        <field name="name">Product Template: add button to view draft PO list</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="purchase.view_product_template_purchase_buttons_from"/>
+        <field name="arch" type="xml">
+            <button name="action_view_po" position="after">
+                <button
+                    class="oe_stat_button"
+                    name="open_purchase_quotation_list"
+                    type="object"
+                    icon="fa-shopping-cart"
+                    attrs="{'invisible': [('purchase_ok', '=', False)]}"
+                    >
+                    <field
+                        name="purchase_quotation_count"
+                        widget="statinfo"
+                        string="Requests for Quotation"/>
+                </button>
+                <button
+                    class="oe_stat_button"
+                    name="open_purchase_order_list"
+                    type="object"
+                    icon="fa-shopping-cart"
+                    attrs="{'invisible': [('purchase_ok', '=', False)]}"
+                    >
+                    <field
+                        name="purchase_order_count"
+                        widget="statinfo"
+                        string="Purchase Orders"
+                        />
+                </button>
+            </button>
+        </field>
+    </record>
+
+</odoo>
