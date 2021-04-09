@@ -21,6 +21,7 @@
         "product_extra_views_sale",
         "product_extra_views_stock",
         "product_kit",
+        "product_purchase_order_link",
         "product_reference",
         "product_supplier_name_search",
         "product_template_tags_stock_menu",

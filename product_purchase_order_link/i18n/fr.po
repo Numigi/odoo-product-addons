@@ -1,0 +1,54 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* product_purchase_order_link
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-08 20:02+0000\n"
+"PO-Revision-Date: 2021-04-08 16:04-0400\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: product_purchase_order_link
+#: model:ir.model,name:product_purchase_order_link.model_product_product
+msgid "Product"
+msgstr ""
+
+#. module: product_purchase_order_link
+#: model:ir.model,name:product_purchase_order_link.model_product_template
+msgid "Product Template"
+msgstr ""
+
+#. module: product_purchase_order_link
+#: model:ir.model.fields,field_description:product_purchase_order_link.field_product_product__purchase_order_count
+#: model:ir.model.fields,field_description:product_purchase_order_link.field_product_template__purchase_order_count
+msgid "Purchase Order Count"
+msgstr "Nombre de commandes d'achat"
+
+#. module: product_purchase_order_link
+#: model_terms:ir.ui.view,arch_db:product_purchase_order_link.product_template_form
+#: model_terms:ir.ui.view,arch_db:product_purchase_order_link.product_variant_form_view
+msgid "Purchase Orders"
+msgstr "Commandes fournisseurs"
+
+#. module: product_purchase_order_link
+#: model:ir.model.fields,field_description:product_purchase_order_link.field_product_product__purchase_quotation_count
+#: model:ir.model.fields,field_description:product_purchase_order_link.field_product_template__purchase_quotation_count
+#, fuzzy
+#| msgid "Request For Quotation Count"
+msgid "Purchase Quotation Count"
+msgstr "Nombre de demandes de prix"
+
+#. module: product_purchase_order_link
+#: model_terms:ir.ui.view,arch_db:product_purchase_order_link.product_template_form
+#: model_terms:ir.ui.view,arch_db:product_purchase_order_link.product_variant_form_view
+msgid "Requests for Quotation"
+msgstr "Demandes de prix"

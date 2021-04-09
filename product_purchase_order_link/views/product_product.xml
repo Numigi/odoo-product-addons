@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="product_variant_form_view" model="ir.ui.view">
+        <field name="name">Product Variant: add button to view draft PO list</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='active']/.." position="before">
+                <button
+                    class="oe_stat_button"
+                    name="open_purchase_quotation_list"
+                    type="object"
+                    icon="fa-shopping-cart"
+                    attrs="{'invisible': [('purchase_ok', '=', False)]}"
+                    >
+                    <field
+                        name="purchase_quotation_count"
+                        widget="statinfo"
+                        string="Requests for Quotation"
+                        />
+                </button>
+                <button
+                    class="oe_stat_button"
+                    name="open_purchase_order_list"
+                    type="object"
+                    icon="fa-shopping-cart"
+                    attrs="{'invisible': [('purchase_ok', '=', False)]}"
+                    >
+                    <field
+                        name="purchase_order_count"
+                        widget="statinfo"
+                        string="Purchase Orders"
+                        />
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -27,6 +27,7 @@ COPY product_extra_views_sale /mnt/extra-addons/product_extra_views_sale
 COPY product_extra_views_stock /mnt/extra-addons/product_extra_views_stock
 COPY product_kit /mnt/extra-addons/product_kit
 COPY product_panel_shortcut /mnt/extra-addons/product_panel_shortcut
+COPY product_purchase_order_link /mnt/extra-addons/product_purchase_order_link
 COPY product_reference /mnt/extra-addons/product_reference
 COPY product_reference_list_view /mnt/extra-addons/product_reference_list_view
 COPY product_supplier_name_search /mnt/extra-addons/product_supplier_name_search
