@@ -14,27 +14,37 @@ class ProductKitLine(models.Model):
     _order = "sequence"
 
     sequence = fields.Integer()
+    name = fields.Char(translate=True)
 
     product_template_id = fields.Many2one(
         "product.template", ondelete="cascade", required=True, index=True
     )
 
-    component_id = fields.Many2one(
-        "product.product", "Component", ondelete="restrict", required=True
-    )
+    component_id = fields.Many2one("product.product", "Component", ondelete="restrict")
 
-    uom_id = fields.Many2one("uom.uom", "Unit of Measure", required=True)
+    uom_id = fields.Many2one("uom.uom", "Unit of Measure")
 
     quantity = fields.Float(
-        digits=dp.get_precision("Product Unit of Measure"), required=True, default=1
+        digits=dp.get_precision("Product Unit of Measure"), default=1
     )
 
     is_important = fields.Boolean()
 
+    display_type = fields.Selection(
+        [("line_section", "Section"), ("line_note", "Note")],
+    )
+
     @api.onchange("component_id")
-    def _set_default_uom(self):
+    def onchange_component(self):
         if self.component_id:
-            self.uom_id = self.component_id.uom_id
+            self._set_default_name()
+            self._set_default_uom()
+
+    def _set_default_name(self):
+        self.name = self.component_id.get_product_multiline_description_sale()
+
+    def _set_default_uom(self):
+        self.uom_id = self.component_id.uom_id
 
     @api.constrains("component_id", "uom_id")
     def _check_component_uom_category(self):
