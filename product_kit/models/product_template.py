@@ -10,6 +10,7 @@ class ProductTemplate(models.Model):
     _inherit = "product.template"
 
     is_kit = fields.Boolean("Is a Kit")
+    kit_discount = fields.Float()
 
     kit_line_ids = fields.One2many(
         "product.kit.line", "product_template_id", "Kit Components"

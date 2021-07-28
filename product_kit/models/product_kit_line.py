@@ -14,7 +14,7 @@ class ProductKitLine(models.Model):
     _order = "sequence"
 
     sequence = fields.Integer()
-    name = fields.Char(translate=True)
+    name = fields.Char("Description", translate=True)
 
     product_template_id = fields.Many2one(
         "product.template", ondelete="cascade", required=True, index=True
