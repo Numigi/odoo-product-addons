@@ -14,15 +14,32 @@
             </xpath>
             <group name="group_standard_price" position="after">
                 <group name="kit" string="Kit" attrs="{'invisible': [('is_kit', '=', False)]}">
-                    <field name="kit_line_ids" attrs="{'required': [('is_kit', '=', True)]}" nolabel="1" colspan="2">
+                    <field
+                        name="kit_line_ids"
+                        widget="section_and_note_one2many"
+                        attrs="{'required': [('is_kit', '=', True)]}"
+                        nolabel="1"
+                        colspan="2"
+                        >
                         <tree editable="bottom">
+                            <control>
+                                <create string="Add a product"/>
+                                <create string="Add a section" context="{'default_display_type': 'line_section'}"/>
+                                <create string="Add a note" context="{'default_display_type': 'line_note'}"/>
+                            </control>
+                            <field name="display_type" invisible="1"/>
                             <field name="sequence" widget="handle"/>
-                            <field name="component_id"/>
-                            <field name="quantity"/>
-                            <field name="uom_id"/>
+                            <field name="component_id" attrs="{'required': [('display_type', '=', False)]}"/>
+                            <field name="name" widget="section_and_note_text"/>
+                            <field name="quantity" attrs="{'required': [('display_type', '=', False)]}"/>
+                            <field name="uom_id"
+                                string="UoM"
+                                attrs="{'required': [('display_type', '=', False)]}"
+                                />
                             <field name="is_important"/>
                         </tree>
                     </field>
+                    <field name="kit_discount" widget="percentage"/>
                 </group>
             </group>
         </field>

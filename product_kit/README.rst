@@ -2,24 +2,43 @@ Product Kit
 ===========
 This module allows to define a product as a kit.
 
-.. image:: static/description/product_form.png
-
 .. contents:: Table of Contents
+
+Overview
+--------
+The module adds a new field ``Is a Kit`` on products.
+
+.. image:: static/description/product_is_kit.png
+
+When the box is checked, a new ``Kit`` bloc appears.
+
+.. image:: static/description/product_kit_section.png
+
+You may add products, sections and notes to a kit.
+
+.. image:: static/description/product_kit_with_components.png
 
 Components
 ----------
-A kit has components.
+Products in a kit are called ``Components``.
 
-.. image:: static/description/kit_components.png
-
-Each component is a single product that is part of the kit.
-
+Important Components
+~~~~~~~~~~~~~~~~~~~~
 A component can be flagged as ``Important``:
 
-.. image:: static/description/kit_component_important.png
+.. image:: static/description/product_kit_component_important.png
 
 An important component means that the kit can not be sold / rented without this component.
 If the component is not important, it is optional.
+
+Kit Discount
+------------
+Optionally, it is possible to define a discount on the kit.
+
+.. image:: static/description/product_kit_discount.png
+
+It represents a discount to apply on each component of the kit,
+versus buying each product separately.
 
 Product Type
 ------------

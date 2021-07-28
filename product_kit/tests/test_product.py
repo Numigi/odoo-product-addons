@@ -40,3 +40,13 @@ class TestProduct(common.SavepointCase):
             self.component.write(
                 {"uom_id": self.uom_day.id, "uom_po_id": self.uom_day.id}
             )
+
+    def test_onchange_component__set_name(self):
+        line = self.product.kit_line_ids
+        line.onchange_component()
+        assert line.name == self.component.name
+
+    def test_onchange_component__set_uom(self):
+        line = self.product.kit_line_ids
+        line.onchange_component()
+        assert line.uom_id == self.uom_unit
