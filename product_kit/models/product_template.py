@@ -13,7 +13,7 @@ class ProductTemplate(models.Model):
     kit_discount = fields.Float()
 
     kit_line_ids = fields.One2many(
-        "product.kit.line", "product_template_id", "Kit Components"
+        "product.kit.line", "product_template_id", "Kit Components", copy=True
     )
 
     @api.onchange("is_kit")

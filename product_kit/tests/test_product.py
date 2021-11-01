@@ -50,3 +50,7 @@ class TestProduct(common.SavepointCase):
         line = self.product.kit_line_ids
         line.onchange_component()
         assert line.uom_id == self.uom_unit
+
+    def test_copy(self):
+        product = self.product.copy()
+        assert len(product.kit_line_ids) == 1
