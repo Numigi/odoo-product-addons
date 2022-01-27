@@ -23,7 +23,6 @@
         "product_kit",
         "product_purchase_order_link",
         "product_reference",
-        "product_supplier_name_search",
         "product_template_tags_stock_menu",
         "product_variant_button_complete_form",
         "stock_barcode_upc",
