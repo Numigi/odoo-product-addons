@@ -137,3 +137,8 @@ msgstr "Appellation réglementaire"
 #: model:ir.model.fields,field_description:product_dangerous_goods.field_product_template__un_number
 msgid "UN Number"
 msgstr "Numéro UN"
+
+#. module: product_dangerous_goods
+#: selection:product.template,hazard_class:0
+msgid "Class 3 (8) Corrosive Flammable Liquids"
+msgstr "Classe 3 (8), Liquides inflammables corrosifs"
