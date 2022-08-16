@@ -16,6 +16,7 @@ class ProductTemplate(models.Model):
             ("class_2", "Class 2 Gases"),
             ("class_3", "Class 3 Flammable Liquids"),
             ("class_3_6_1", "Class 3 (6.1) Flammable Liquids"),
+            ("class_3_8", "Class 3 (8) Corrosive Flammable Liquids"),
             ("class_4", "Class 4 Substances / Products"),
             ("class_5", "Class 5 Oxidizing Substances"),
             ("class_6", "Class 6 Toxic and Infectious Substances"),
