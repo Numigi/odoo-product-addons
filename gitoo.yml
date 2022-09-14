@@ -11,3 +11,9 @@
   includes:
     - product_brand
     - product_template_tags
+    - product_pricelist_direct_print # TA#46902
+
+- url: https://github.com/OCA/reporting-engine
+  branch: "12.0"
+  includes:
+    - report_xlsx  # dependency of product_pricelist_direct_print
