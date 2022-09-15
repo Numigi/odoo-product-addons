@@ -3,7 +3,7 @@ Product Pricelist Direct Print Extended
 
 Context
 --------
-The module `Product Pricelist Direct Print <https://github.com/OCA/product-attribute/tree/14.0/product_pricelist_direct_print>`_ allows you to send Products Prcielist to one or multiple partners.
+The module `Product Pricelist Direct Print <https://github.com/OCA/product-attribute/tree/14.0/product_pricelist_direct_print>`_ allows you to send Products Pricelists to one or multiple partners.
 
 The module adds a filter that allows you to send ``Product Pricelists`` only to Parent Partners.
 
@@ -19,7 +19,7 @@ then I click on ``Action / Send Customer Pricelist By EMail``
 
 .. image:: static/description/partner_send_pricelist_by_mail.png
 
-A wizard show up, I fill the form then I click on the button ``send by email``
+A wizard shows up, I fill the form then I click on the button ``send by email``
 
 The partner successfully receives the pricelist by EMail
 
