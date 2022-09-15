@@ -1,6 +1,12 @@
 Product Pricelist Direct Print Extended
 =======================================
 
+Context
+--------
+The module `Product Pricelist Direct Print <https://github.com/OCA/product-attribute/tree/14.0/product_pricelist_direct_print>`_ allows you to send Products Prcielist to one or multiple partners.
+
+The module adds a filter that allows you to send ``Product Pricelists`` only to Parent Partners.
+
 Overview
 --------
 This module removes the filter by parent on partners while sending pricelist by mail.
