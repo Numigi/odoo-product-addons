@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!--Email template -->
+    <record id="email_template_edi_pricelist_chatter" model="mail.template">
+        <field name="name">Pricelist - Send by Email</field>
+        <field name="email_from">${(user.email and '&quot;%s&quot; &lt;%s&gt;' % (user.name, user.email) or '')|safe}</field>
+        <field name="reply_to">${(user.email or '')|safe}</field>
+        <field name="subject">${user.company_id.name} Pricelist (Ref ${ctx['pricelist_name']or 'n/a'})</field>
+        <field name="partner_to">${object.id or ''}</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="auto_delete" eval="True"/>
+        <field name="lang">${object.lang}</field>
+        <field name="body_html"><![CDATA[
+<p>Dear ${object.name or 'customer'},</p>
+<p>
+The attached file is a PDF document containg the
+<strong>${ctx['pricelist_name']}</strong> pricelist.
+</p>
+<p>You can reply to this email if you have any questions.</p>
+<p>Thank you,</p>
+
+<p style="color:#888888;">
+% if user and user.signature:
+    ${user.signature | safe}
+% endif
+</p>
+]]></field>
+    </record>
+
+</odoo>
