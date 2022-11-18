@@ -13,3 +13,4 @@ It should not be specific to medical, insurances, tourism, construction, etc.
 It also should not add fields to products or product categories that will be used in some application more than another.
 
 For example, it should not add a field that is related to accounting, sales, inventory or purchases.
+
