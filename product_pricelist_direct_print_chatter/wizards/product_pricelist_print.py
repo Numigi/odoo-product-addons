@@ -34,8 +34,6 @@ class ProductPricelistPrintChatter(models.TransientModel):
             'name': self.pricelist_id.name,
             'datas': result,
             'datas_fname': report_name,
-            'res_model': 'product.pricelist.print',
-            'res_id': self.id,
         })
         template_id.attachment_ids = [(6, 0, [new_attachment_id.id])]
 
