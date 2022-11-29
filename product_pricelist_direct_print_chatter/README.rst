@@ -26,6 +26,14 @@ is logged in the chatter of the contact:
 
 .. image:: static/description/send_pricelist_email_chatter.png
 
+When the contact receive the EMail in his mailbox, he can reply to the Email as shown in this image:
+
+.. image:: static/description/reply_to.png
+
+The reply will be tracked in the chatter of the concerned contact.
+
+.. image:: static/description/reply_to_tracked.png
+
 Contributors
 ------------
 * Numigi (tm) and all its contributors (https://bit.ly/numigiens)

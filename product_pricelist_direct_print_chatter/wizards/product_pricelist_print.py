@@ -74,7 +74,7 @@ class ProductPricelistPrintChatter(models.TransientModel):
         if not template_id.attachment_ids:
             self.generate_report(template_id)
         composer = self.env['mail.compose.message'].with_context({
-            'default_composition_mode': 'mass_mail',
+            'default_composition_mode': 'comment',
             'default_notify': True,
             'default_res_id': self._context.get('partner_id'),
             'default_model': self._context.get('active_model'),
@@ -82,7 +82,7 @@ class ProductPricelistPrintChatter(models.TransientModel):
             'default_template_id': template_id.id,
         }).sudo().create({})
         values = composer.onchange_template_id(
-            template_id.id, 'mass_mail', self._context.get('active_model'),
+            template_id.id, 'comment', self._context.get('active_model'),
             self._context.get('partner_id'))['value']
         composer.write(values)
         composer.with_context(
