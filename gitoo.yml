@@ -1,19 +1,19 @@
 - url: https://{{GIT_TOKEN}}@github.com/Numigi/odoo-base-addons
-  branch: "12.0"
+  branch: "14.0"
   includes:
     - base_extended_security
 
 - url: https://{{GIT_TOKEN}}@github.com/Numigi/odoo-enterprise
-  branch: "12.0"
+  branch: "14.0"
 
-- url: https://github.com/OCA/product-attribute
-  branch: "12.0"
-  includes:
-    - product_brand
-    - product_template_tags
-    - product_pricelist_direct_print # TA#46902
+#- url: https://github.com/OCA/product-attribute
+#  branch: "12.0"
+#  includes:
+#    - product_brand
+#    - product_template_tags
+#    - product_pricelist_direct_print # TA#46902
 
 - url: https://github.com/OCA/reporting-engine
-  branch: "12.0"
+  branch: "14.0"
   includes:
     - report_xlsx  # dependency of product_pricelist_direct_print
