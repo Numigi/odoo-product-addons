@@ -1,4 +1,4 @@
-# © 2019 - Today Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# © 2022 - Today Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 {
@@ -16,8 +16,6 @@
         'sales_team',
         'purchase',
     ],
-    'data': [
-        'menu.xml',
-    ],
+    'data': ['views/menu.xml'],
     'installable': True,
 }
