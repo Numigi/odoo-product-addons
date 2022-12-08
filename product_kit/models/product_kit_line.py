@@ -2,7 +2,6 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from odoo import api, fields, models, _
-from odoo.addons import decimal_precision as dp
 from odoo.exceptions import ValidationError
 
 
@@ -25,7 +24,7 @@ class ProductKitLine(models.Model):
     uom_id = fields.Many2one("uom.uom", "Unit of Measure")
 
     quantity = fields.Float(
-        digits=dp.get_precision("Product Unit of Measure"), default=1
+        digits="Product Unit of Measure", default=1
     )
 
     is_important = fields.Boolean()
