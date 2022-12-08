@@ -1,5 +1,5 @@
 # © 2017 Savoir-faire Linux
-# © 2018 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# © 2022 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 import odoo.addons.decimal_precision as dp
@@ -67,7 +67,6 @@ class ProductWithWeightInUoM(models.Model):
 
         return res
 
-    @api.multi
     def write(self, vals):
         """Synchronize the weight in Kg and the weight in the uom of the product.
 
