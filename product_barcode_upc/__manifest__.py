@@ -3,7 +3,7 @@
 {
     "name": "Product Barcode UPC",
     "summary": "Add a UPC field (barcode alternative) to Products",
-    "version": "12.0.1.0.0",
+    "version": "14.0.1.0.0",
     "website": "https://bit.ly/numigi-com",
     "author": "Numigi",
     "maintainer": "Numigi",
