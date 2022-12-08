@@ -26,7 +26,7 @@ class TestProductCreateGroup(common.SavepointCase):
 
     @data('product.product', 'product.template')
     def test_create_product_with_one_seller(self, model):
-        product = self.env[model].sudo(self.user).create({
+        product = self.env[model].with_user(self.user).create({
             'name': 'Wood Table',
             'seller_ids': [(0, 0, {
                 'name': self.supplier.id,
@@ -37,7 +37,7 @@ class TestProductCreateGroup(common.SavepointCase):
         assert len(product.seller_ids) == 1
 
     def test_create_template_with_multiple_variants(self):
-        template = self.env['product.template'].sudo(self.user).create({
+        template = self.env['product.template'].with_user(self.user).create({
             'name': 'Wood Table',
             'attribute_line_ids': [(0, 0, {
                 'attribute_id': self.attribute.id,
