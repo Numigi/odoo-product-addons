@@ -20,7 +20,7 @@ class TestProductCreateGroup(common.SavepointCase):
                 (4, cls.env.ref('product_create_group.group_product_create').id),
             ]
         })
-        cls.supplier = cls.env['res.partner'].create({'name': 'Supplier', 'supplier': True})
+        cls.supplier = cls.env['res.partner'].create({'name': 'Supplier'})
 
         cls.attribute = cls.env['product.attribute'].search([], limit=1)
 
@@ -48,12 +48,3 @@ class TestProductCreateGroup(common.SavepointCase):
             })]
         })
         assert len(template.product_variant_ids) == 2
-
-    def test_change_product_price(self):
-        product = self.env['product.product'].sudo(self.user).create({
-            'name': 'Wood Table',
-            'standard_price': 50,
-        })
-        product.standard_price = 100
-        history_lines = self.env['product.price.history'].search([('product_id', '=', product.id)])
-        assert len(history_lines) == 2

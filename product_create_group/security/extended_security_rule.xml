@@ -15,13 +15,6 @@
         <field name="perm_create" eval="1"/>
     </record>
 
-    <record id="product_price_history_rule" model="extended.security.rule">
-        <field name="group_ids" eval="[(4, ref('group_product_create'))]"/>
-        <field name="model_id" ref="product.model_product_price_history"/>
-        <field name="perm_write" eval="1"/>
-        <field name="perm_create" eval="1"/>
-    </record>
-
     <record id="product_supplierinfo_rule" model="extended.security.rule">
         <field name="group_ids" eval="[(4, ref('group_product_create'))]"/>
         <field name="model_id" ref="product.model_product_supplierinfo"/>
@@ -65,9 +58,5 @@
         <field name="perm_unlink" eval="1"/>
     </record>
 
-    <record id="product_price_history_unlink_rule" model="extended.security.rule">
-        <field name="model_id" ref="product.model_product_price_history"/>
-        <field name="perm_unlink" eval="1"/>
-    </record>
 
 </odoo>

@@ -26,5 +26,5 @@ class ProductProduct(models.Model):
                 [("upc", operator, name)] + args, limit=limit, access_rights_uid=name_get_uid
             )
         if product_ids:
-            return self.browse(product_ids).name_get()
+            return product_ids
         return res
