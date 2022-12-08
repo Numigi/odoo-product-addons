@@ -1,8 +1,7 @@
 # © 2017 Savoir-faire Linux
-# © 2018 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# © 2022 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
-import odoo.addons.decimal_precision as dp
 
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
@@ -21,7 +20,7 @@ class ProductWithWeightWithTrackVisibility(models.Model):
 
     _inherit = 'product.product'
 
-    weight = fields.Float(track_visibility='onchange')
+    weight = fields.Float(tracking=True)
 
 
 class ProductWithWeightInUoM(models.Model):
@@ -33,12 +32,12 @@ class ProductWithWeightInUoM(models.Model):
     _inherit = 'product.product'
 
     weight_in_uom = fields.Float(
-        'Weight', digits=dp.get_precision('Stock Weight'),
-        track_visibility='onchange')
+        'Weight', digits='Stock Weight',
+        tracking=True)
 
     specific_weight_uom_id = fields.Many2one(
         'uom.uom', 'Weight UoM', ondelete='restrict',
-        track_visibility='onchange')
+        tracking=True)
 
     @api.constrains('weight_in_uom')
     def _check_weight_is_not_negative(self):
@@ -67,7 +66,6 @@ class ProductWithWeightInUoM(models.Model):
 
         return res
 
-    @api.multi
     def write(self, vals):
         """Synchronize the weight in Kg and the weight in the uom of the product.
 
@@ -116,25 +114,25 @@ class ProductWithDimensions(models.Model):
 
     height = fields.Float(
         'Height',
-        track_visibility='onchange',
-        digits=dp.get_precision('Product Dimension'),
+        tracking=True,
+        digits='Product Dimension',
     )
 
     length = fields.Float(
         'Length',
-        track_visibility='onchange',
-        digits=dp.get_precision('Product Dimension'),
+        tracking=True,
+        digits='Product Dimension',
     )
 
     width = fields.Float(
         'Width',
-        track_visibility='onchange',
-        digits=dp.get_precision('Product Dimension'),
+        tracking=True,
+        digits='Product Dimension',
     )
 
     dimension_uom_id = fields.Many2one(
         'uom.uom', 'Dimension UoM', ondelete='restrict',
-        track_visibility='onchange')
+        tracking=True)
 
     @api.constrains('height')
     def _check_height_is_not_negative(self):
@@ -169,7 +167,7 @@ class ProductWithVolumeDecimalPrecision(models.Model):
 
     _inherit = 'product.product'
 
-    volume = fields.Float(digits=dp.get_precision('Product Volume'))
+    volume = fields.Float(digits='Product Volume')
 
 
 class ProductWithVolumeComputedFromDimensions(models.Model):
@@ -213,7 +211,7 @@ class ProductWithDensity(models.Model):
     density = fields.Float(
         'Density',
         compute='_compute_density',
-        digits=dp.get_precision('Product Density'),
+        digits='Product Density',
         store=True,
     )
 

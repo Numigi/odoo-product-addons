@@ -2,7 +2,6 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_ir_property,Manage Products and Variants: ir.property,base.model_ir_property,base.group_user,1,1,1,1
 access_product_product,Manage Products and Variants: product.product,product.model_product_product,base.group_user,1,1,1,1
 access_product_template,Manage Products and Variants: product.template,product.model_product_template,base.group_user,1,1,1,1
-access_product_price_history,Manage Products and Variants: product.price.history,product.model_product_price_history,base.group_user,1,1,1,1
 access_product_supplierinfo,Manage Products and Variants: product.supplierinfo,product.model_product_supplierinfo,base.group_user,1,1,1,1
 access_product_template_attribute_line,Manage Products and Variants: product.template.attribute.line,product.model_product_template_attribute_line,base.group_user,1,1,1,1
 access_product_template_attribute_value,Manage Products and Variants: product.template.attribute.value,product.model_product_template_attribute_value,base.group_user,1,1,1,1

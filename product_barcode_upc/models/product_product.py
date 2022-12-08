@@ -1,4 +1,4 @@
-# © 2020 - today Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# © 2022 - today Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
@@ -14,9 +14,7 @@ class ProductProduct(models.Model):
     ]
 
     @api.model
-    def _name_search(
-        self, name, args=None, operator="ilike", limit=100, name_get_uid=None
-    ):
+    def _name_search(self, name, args=None, operator="ilike", limit=100, name_get_uid=None):
         res = super()._name_search(name, args, operator, limit, name_get_uid)
         if res:
             return res
@@ -25,8 +23,8 @@ class ProductProduct(models.Model):
         product_ids = []
         if name and operator in positive_operators:
             product_ids = self._search(
-                [("upc", "=", name)] + args, limit=limit, access_rights_uid=name_get_uid
+                [("upc", operator, name)] + args, limit=limit, access_rights_uid=name_get_uid
             )
         if product_ids:
-            return self.browse(product_ids).name_get()
+            return product_ids
         return res

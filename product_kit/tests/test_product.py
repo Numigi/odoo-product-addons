@@ -1,4 +1,4 @@
-# © 2020 - today Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# © 2022 - today Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 import pytest
@@ -52,5 +52,5 @@ class TestProduct(common.SavepointCase):
         assert line.uom_id == self.uom_unit
 
     def test_copy(self):
-        product = self.product.copy()
-        assert len(product.kit_line_ids) == 1
+        product_tmpl = self.product.product_tmpl_id.copy()
+        assert len(product_tmpl.kit_line_ids) == 1
