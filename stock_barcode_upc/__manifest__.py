@@ -3,7 +3,7 @@
 {
     "name": "Product Barcode UPC",
     "summary": "Integrate UPC codes with the barcode application",
-    "version": "12.0.1.0.0",
+    "version": "14.0.1.0.0",
     "website": "https://bit.ly/numigi-com",
     "author": "Numigi",
     "maintainer": "Numigi",
