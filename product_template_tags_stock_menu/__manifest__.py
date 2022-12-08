@@ -3,7 +3,7 @@
 
 {
     'name': 'Product Template Tag Stock Menu',
-    'version': '11.0.1.0.0',
+    'version': "14.0.1.0.0",
     'author': 'Numigi',
     'maintainer': 'numigi',
     'website': 'https://bit.ly/numigi-com',
