@@ -43,8 +43,7 @@ class ProductPricelistPrintChatter(models.TransientModel):
         template_id = self.env.ref(
             'product_pricelist_direct_print_chatter.'
             'email_template_edi_pricelist_chatter')
-        if not template_id.attachment_ids:
-            self.generate_report(template_id)
+        self.generate_report(template_id)
         compose_form_id = self.env.ref(
             'mail.email_compose_message_wizard_form').id
         ctx = {
@@ -71,8 +70,7 @@ class ProductPricelistPrintChatter(models.TransientModel):
         template_id = self.env.ref(
             'product_pricelist_direct_print_chatter.'
             'email_template_edi_pricelist_chatter')
-        if not template_id.attachment_ids:
-            self.generate_report(template_id)
+        self.generate_report(template_id)
         composer = self.env['mail.compose.message'].with_context({
             'default_composition_mode': 'comment',
             'default_notify': True,
