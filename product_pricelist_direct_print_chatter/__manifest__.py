@@ -3,7 +3,7 @@
 {
     "name": "Product Pricelist Direct Print Chatter",
     "summary": "Add chatter in contact after sending a Product Pricelist",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Numigi",
     "maintainer": "Numigi",
     "website": "https://www.numigi.com",
