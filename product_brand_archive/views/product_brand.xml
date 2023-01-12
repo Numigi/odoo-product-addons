@@ -6,17 +6,13 @@
         <field name="model">product.brand</field>
         <field name="inherit_id" ref="product_brand.view_product_brand_form"/>
         <field name="arch" type="xml">
-            <div class="oe_button_box" position="inside">
-                
-            <field name="active" invisible="1" />
-            <widget
-                name="web_ribbon"
-                title="Archived"
-                bg_color="bg-danger"
-                attrs="{'invisible': [('active', '=', True)]}"
-            />
-            
-            </div>
+              <xpath expr="//sheet/div/button[last()]" position="after">
+                   <button class="oe_stat_button" type="object" name="toggle_active" icon="fa-archive">
+                                <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                       </button>
+              </xpath>
+<!--            <div class="oe_button_box[last()]" position="after">-->
+
         </field>
     </record>
 
