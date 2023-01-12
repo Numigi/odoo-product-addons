@@ -11,8 +11,6 @@
                                 <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
                        </button>
               </xpath>
-<!--            <div class="oe_button_box[last()]" position="after">-->
-
         </field>
     </record>
 
