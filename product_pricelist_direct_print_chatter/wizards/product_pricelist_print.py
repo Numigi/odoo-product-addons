@@ -26,7 +26,7 @@ class ProductPricelistPrintChatter(models.TransientModel):
     def generate_report(self, template_id):
         report = self.env.ref(
             'product_pricelist_direct_print.action_report_product_pricelist')
-        result = report._render_qweb_pdf([self.ids[0]])
+        result, _  = report._render_qweb_pdf([self.id])
         result = base64.b64encode(result)
         new_attachment_id = self.env['ir.attachment'].create({
             'name': self.pricelist_id.name,
