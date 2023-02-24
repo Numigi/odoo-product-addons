@@ -5,13 +5,14 @@ from odoo.tests import common
 
 
 class TestProduct(common.SavepointCase):
+    
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
         cls.product = cls.env["product.product"].create({"name": "My Product"})
         cls.template = cls.product.product_tmpl_id
         cls.product_2 = cls.env["product.product"].create(
-            {"name": "My Product", "product_tmpl_id": cls.template.id}
+            {"name": "My Product 2"}
         )
 
         cls.po = cls.env["purchase.order"].create(

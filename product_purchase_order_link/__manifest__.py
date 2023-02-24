@@ -3,10 +3,11 @@
 
 {
     "name": "Product Purchase Order Link",
-    "version": "1.1.0",
+    "version": "14.0.1.0.0",
     "category": "Fleet",
     "description": "Add a buttons on products to access purchase orders",
     "author": "Numigi",
+    'website': 'https://bit.ly/numigi-com',
     "depends": ["purchase"],
     "data": ["views/product_template.xml", "views/product_product.xml"],
     "application": False,

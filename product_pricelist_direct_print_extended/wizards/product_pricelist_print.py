@@ -8,7 +8,6 @@ class ProductPricelistPrint(models.TransientModel):
     _name = 'product.pricelist.print'
     _inherit = ['product.pricelist.print', 'mail.thread']
 
-    @api.multi
     def send_batch(self):
         self.ensure_one()
         for partner in self.partner_ids:
