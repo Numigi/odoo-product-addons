@@ -23,4 +23,4 @@ class ProductPackaging(models.Model):
     packaging_length = fields.Float('Length')
     height_uom_id = fields.Many2one('uom.uom', string='Height UOM', domain=_get_uom_domain, default=_get_default_uom)
     width_uom_id = fields.Many2one('uom.uom', string='Width UOM', domain=_get_uom_domain, default=_get_default_uom)
-    length_uom_id = fields.Many2one('uom.uom', string='Lenght UOM', domain=_get_uom_domain, default=_get_default_uom)
+    length_uom_id = fields.Many2one('uom.uom', string='Length UOM', domain=_get_uom_domain, default=_get_default_uom)
