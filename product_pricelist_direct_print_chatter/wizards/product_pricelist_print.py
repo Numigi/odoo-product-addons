@@ -7,7 +7,6 @@ from odoo.addons.product_pricelist_direct_print_extended.wizards.\
     product_pricelist_print import ProductPricelistPrint
 
 
-@api.multi
 def send_batch(self):
     self.ensure_one()
     for partner in self.partner_ids:
@@ -27,17 +26,14 @@ class ProductPricelistPrintChatter(models.TransientModel):
     def generate_report(self, template_id):
         report = self.env.ref(
             'product_pricelist_direct_print.action_report_product_pricelist')
-        result, format = report.render_qweb_pdf([self.id])
+        result, _  = report._render_qweb_pdf([self.id])
         result = base64.b64encode(result)
-        report_name = self.pricelist_id.name + '.' + format
         new_attachment_id = self.env['ir.attachment'].create({
             'name': self.pricelist_id.name,
             'datas': result,
-            'datas_fname': report_name,
         })
         template_id.attachment_ids = [(6, 0, [new_attachment_id.id])]
 
-    @api.multi
     def message_composer_action(self):
         self.ensure_one()
         template_id = self.env.ref(
@@ -66,7 +62,6 @@ class ProductPricelistPrintChatter(models.TransientModel):
             'context': ctx,
         }
 
-    @api.multi
     def force_pricelist_send(self):
         template_id = self.env.ref(
             'product_pricelist_direct_print_chatter.'
