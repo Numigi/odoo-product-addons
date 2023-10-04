@@ -18,9 +18,12 @@
   includes:
     - product_brand
    
-
-
 - url: https://github.com/OCA/reporting-engine
   branch: "14.0"
   includes:
     - report_xlsx  # dependency of product_pricelist_direct_print
+
+- url: https://github.com/OCA/product-pack
+  branch: "14.0"
+  includes:
+    - product_pack
