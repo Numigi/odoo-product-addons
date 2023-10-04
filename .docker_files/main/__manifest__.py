@@ -21,6 +21,7 @@
         "product_extra_views_sale",
         "product_extra_views_stock",
         "product_kit",
+        "product_pack_ext",
         "product_pricelist_direct_print_chatter",
         "product_pricelist_direct_print_extended",
         "product_purchase_order_link",
