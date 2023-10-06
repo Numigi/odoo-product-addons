@@ -2,6 +2,7 @@
 Sale Product Pack Extended
 ==========================
 
+This module fix the compute price of an article pack according to pricelist.
 
 
 **Table of contents**
@@ -9,8 +10,9 @@ Sale Product Pack Extended
 .. contents::
    :local:
 
-Usage
-=====
+Issue
+=======
+
 
 
 
