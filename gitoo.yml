@@ -27,3 +27,4 @@
   branch: "14.0"
   includes:
     - product_pack
+    - sale_product_pack

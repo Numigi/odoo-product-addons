@@ -38,7 +38,10 @@ def price_compute(self, price_type, uom=False, currency=False, company=False):
             # Add condition to not apply conversion for a pricelist with an article of the pack
             not_product_pack_in_pricelist = all(p not in product.sudo().pack_line_ids.mapped('product_id.id')
                                                 for p in pricelist.item_ids.mapped('product_id.id'))
-            if pricelist and not_product_pack_in_pricelist and pricelist.currency_id != product.currency_id:
+            not_product_tmplt_pack_in_pricelist = all(p not in product.sudo().pack_line_ids.mapped('product_id.product_tmpl_id.id') 
+                                                      for p in pricelist.item_ids.mapped('product_tmpl_id.id'))
+            if pricelist and not_product_pack_in_pricelist and not_product_tmplt_pack_in_pricelist and\
+                  pricelist.currency_id != product.currency_id:
                 pack_price = pricelist.currency_id._convert(
                     pack_price,
                     product.currency_id,
