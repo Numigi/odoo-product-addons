@@ -19,7 +19,7 @@
     - product_brand
 
 - url: https://github.com/oca/intrastat-extrastat
-  branch: "12.0"
+  branch: "14.0"
   includes:
     - product_harmonized_system
    
