@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <record id="product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.hs.field.visible.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product_harmonized_system.product_template_form_view" />
+        <field name="arch" type="xml">
+                <field name="hs_code_id" position="attributes">
+                    <attribute name="attrs">{'invisible': 0}</attribute>
+                </field>
+                <field name="origin_country_id" position="attributes">
+                    <attribute name="attrs">{'invisible': 0}</attribute>
+                </field>
+                <field name="origin_state_id" position="attributes">
+                    <attribute name="attrs">{'invisible': 0}</attribute>
+                </field>
+                <page name="general_information" position="inside">
+                    <group string="Description for Delivery Orders" attrs="{'invisible': [('type', '!=', 'service')]}">
+                        <field name="description_pickingout" nolabel="1" placeholder="This note is added to delivery orders."/>
+                    </group>
+                    <group string="Description for Receipts" attrs="{'invisible': [('type', '!=', 'service')]}">
+                        <field name="description_pickingin" nolabel="1" placeholder="This note is added to receipt orders (e.g. where to store the product in the warehouse)."/>
+                    </group>
+                    <group string="Description for Internal Transfers" groups="stock.group_stock_multi_locations" attrs="{'invisible': [('type', '!=', 'service')]}">
+                        <field name="description_picking" placeholder="This note is added to internal transfer orders (e.g. where to pick the product in the warehouse)." nolabel="1"/>
+                    </group>
+                </page>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,54 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* product_service_type_show_fields
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20231108\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-13 19:42+0000\n"
+"PO-Revision-Date: 2023-11-13 19:42+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_service_type_show_fields
+#: model_terms:ir.ui.view,arch_db:product_service_type_show_fields.product_template_form_view
+msgid "Description for Delivery Orders"
+msgstr "Description pour les bons de livraison"
+
+#. module: product_service_type_show_fields
+#: model_terms:ir.ui.view,arch_db:product_service_type_show_fields.product_template_form_view
+msgid "Description for Internal Transfers"
+msgstr "Description pour les transferts internes"
+
+#. module: product_service_type_show_fields
+#: model_terms:ir.ui.view,arch_db:product_service_type_show_fields.product_template_form_view
+msgid "Description for Receipts"
+msgstr "Description pour les réceptions"
+
+#. module: product_service_type_show_fields
+#: model_terms:ir.ui.view,arch_db:product_service_type_show_fields.product_template_form_view
+msgid "This note is added to delivery orders."
+msgstr "Cette note est ajoutée aux bons de livraison."
+
+#. module: product_service_type_show_fields
+#: model_terms:ir.ui.view,arch_db:product_service_type_show_fields.product_template_form_view
+msgid ""
+"This note is added to internal transfer orders (e.g. where to pick the "
+"product in the warehouse)."
+msgstr ""
+"Cette note est ajoutée aux transferts internes (par exemple, où prendre les "
+"articles dans l'entrepôt)."
+
+#. module: product_service_type_show_fields
+#: model_terms:ir.ui.view,arch_db:product_service_type_show_fields.product_template_form_view
+msgid ""
+"This note is added to receipt orders (e.g. where to store the product in the"
+" warehouse)."
+msgstr ""
+"Cette note est ajoutée aux bons de réception (exemple, où stocker les "
+"articles dans l'entrepôt)."
