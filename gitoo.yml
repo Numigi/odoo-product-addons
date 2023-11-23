@@ -10,6 +10,7 @@
 - url: https://github.com/OCA/product-attribute
   branch: "14.0"
   includes:
+    - product_manufacturer
     - product_template_tags
     - product_pricelist_direct_print
 
