@@ -18,9 +18,14 @@ msgstr ""
 #. module: product_manufacturer_quick_search
 #: model_terms:ir.ui.view,arch_db:product_manufacturer_quick_search.product_template_search_view
 msgid "Manufacturer Product Code"
-msgstr "Nom du produit chez le fabricant"
+msgstr "Code du produit chez le fabricant"
 
 #. module: product_manufacturer_quick_search
 #: model_terms:ir.ui.view,arch_db:product_manufacturer_quick_search.product_template_search_view
 msgid "Manufacturer Product Name"
-msgstr "Code du produit chez le fabricant"
+msgstr "Nom du produit chez le fabricant"
+
+#. module: product_manufacturer_quick_search
+#: model_terms:ir.ui.view,arch_db:product_manufacturer_quick_search.product_template_search_view
+msgid "Manufacturer"
+msgstr "Fabricant"
