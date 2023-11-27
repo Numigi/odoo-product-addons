@@ -8,7 +8,34 @@
             <field name="categ_id" position="after">
                 <field string="Manufacturer Product Name" name="manufacturer_pname" />
                 <field string="Manufacturer Product Code" name="manufacturer_pref" />
+                <field string="Manufacturer" name="manufacturer" />
             </field>
         </field>
     </record>
+
+    <!--  Override simplier than doing xpath to mutliple group tag and doing some invisible attributes and displaying it after  -->
+
+    <record id="product_manufacturer.product_template_manufacturer_form_view" model="ir.ui.view">
+        <field name="name">product.template.form - product_manufacturer</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='general_information']/group/group[2]" position="after">
+                <group name="manufacturer" string="Manufacturer">
+                    <group>
+                        <field
+                            name="manufacturer"
+                            context="{'res_partner_search_mode': 'supplier'}"
+                        />
+                        <field name="manufacturer_pname" />
+                    </group>
+                    <group>
+                        <field name="manufacturer_pref" />
+                        <field name="manufacturer_purl" widget="url" />
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>

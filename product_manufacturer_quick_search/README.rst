@@ -12,6 +12,14 @@ Then it is possible to carry out quick searches using the article name and the m
 
 .. image:: static/description/search_by_manufacturer_ref_and_code.png
 
+In addition, if I search by the name of the manufacturer, I can find all product(s) concerned.
+
+.. image:: static/description/search_by_manufacturer_name.png
+
+I also see that the place between manufacturer section and internal notes has changed.
+
+.. image:: static/description/manufacturer_group_place.png
+
 Contributors
 ------------
 * Numigi (tm) and all its contributors (https://bit.ly/numigiens)
