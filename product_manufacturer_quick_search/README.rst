@@ -8,7 +8,7 @@ Firstly, as a user with access to the products I find the manufacturer informati
 
 .. image:: static/description/manufacturer_section.png
 
-Then it is possible to carry out quick searches using the article name and the manufacturer's article code as well as the manufacturer's name:
+Then it is possible to carry out quick searches the manufacturer's product code as well as the manufacturer's product name:
 
 .. image:: static/description/search_by_manufacturer_ref_and_code.png
 
@@ -19,6 +19,15 @@ In addition, if I search by the name of the manufacturer, I can find all product
 I also see that the place between manufacturer section and internal notes has changed.
 
 .. image:: static/description/manufacturer_group_place.png
+
+Since the version 1.0.3, it is possible to directly search using the product name (the first suggested on search view while typing) :
+- The manufacturer's name
+- The manufacturer's product code
+- The manufacturer's product name
+
+This functionality is also available on product variants search.
+
+.. image:: static/description/product_name_search.png
 
 Contributors
 ------------
