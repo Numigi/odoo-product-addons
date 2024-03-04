@@ -2,7 +2,7 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 import base64
-from odoo import api, models
+from odoo import models
 from odoo.addons.product_pricelist_direct_print_extended.wizards.\
     product_pricelist_print import ProductPricelistPrint
 
@@ -26,7 +26,7 @@ class ProductPricelistPrintChatter(models.TransientModel):
     def generate_report(self, template_id):
         report = self.env.ref(
             'product_pricelist_direct_print.action_report_product_pricelist')
-        result, _  = report._render_qweb_pdf([self.id])
+        result, _ = report._render_qweb_pdf([self.id])
         result = base64.b64encode(result)
         new_attachment_id = self.env['ir.attachment'].create({
             'name': self.pricelist_id.name,

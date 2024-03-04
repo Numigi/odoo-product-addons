@@ -73,28 +73,33 @@ class ProductWithWeightInUoM(models.Model):
         """
         vals_copy = vals.copy()
         super().write(vals)
-
-        updating_weight_in_uom = 'weight_in_uom' in vals_copy or 'specific_weight_uom_id' in vals_copy
-        updating_weight_in_uom_from_weight = self._context.get('updating_weight_in_uom_from_weight')
-
+        updating_weight_in_uom = (
+            "weight_in_uom" in vals_copy or "specific_weight_uom_id" in vals_copy
+        )
+        updating_weight_in_uom_from_weight = self._context.get(
+            "updating_weight_in_uom_from_weight"
+        )
         updating_weight = 'weight' in vals_copy
-        updating_weight_from_weight_in_uom = self._context.get('updating_weight_from_weight_in_uom')
-
+        updating_weight_from_weight_in_uom = self._context.get(
+            "updating_weight_from_weight_in_uom"
+        )
         if updating_weight_in_uom and not updating_weight_in_uom_from_weight:
             for record in self:
                 record.update_weight_from_weight_in_uom()
-
         elif updating_weight and not updating_weight_from_weight_in_uom:
             for record in self:
                 record.update_weight_in_uom_from_weight()
-
         return True
 
     def update_weight_from_weight_in_uom(self):
         """Update the weight in kg from the weight in uom."""
         uom_kg = self.env.ref('uom.product_uom_kgm')
-        weight = self.specific_weight_uom_id._compute_quantity(self.weight_in_uom, uom_kg)
-        self.with_context(updating_weight_from_weight_in_uom=True).write({'weight': weight})
+        weight = self.specific_weight_uom_id._compute_quantity(
+            self.weight_in_uom, uom_kg
+        )
+        self.with_context(updating_weight_from_weight_in_uom=True).write(
+            {"weight": weight}
+        )
 
     def update_weight_in_uom_from_weight(self):
         """Update the weight in uom from the weight in kg."""

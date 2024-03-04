@@ -16,7 +16,7 @@ class TestProductBarcodeUPC(SavepointCase):
             "name": "Product Template",
             "barcode": "123456789",
         })
-        ptal = cls.env['product.template.attribute.line'].create({
+        cls.env['product.template.attribute.line'].create({
             'attribute_id': product_attribute.id,
             'product_tmpl_id': cls.product_template.id,
             'value_ids': [(6, 0, [size_value_l.id])],

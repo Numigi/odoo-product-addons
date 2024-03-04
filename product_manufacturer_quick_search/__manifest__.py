@@ -10,7 +10,8 @@
     "license": "AGPL-3",
     "category": "Product",
     "depends": ["product_manufacturer"],
-    "summary": "Add a quick search for items using their manufacturer name or code, as well as the manufacturer name.",
+    "summary": """Add a quick search for items using their manufacturer name or code,
+    as well as the manufacturer name.""",
     "data": [
         "views/product_template.xml",
     ],
