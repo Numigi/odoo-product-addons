@@ -1,4 +1,4 @@
-# product-addons
+# odoo-product-addons
 
 This repository contains transversal Odoo addons related to products.
 
