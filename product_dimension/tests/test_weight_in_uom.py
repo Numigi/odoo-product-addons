@@ -27,7 +27,7 @@ class TestProductWeightInUoM(common.SavepointCase):
         self.assertEqual(self.product.weight_in_uom, 10)
         self.assertEqual(self.product.specific_weight_uom_id, self.kg)
 
-    def test_when_update_weight_if_has_weight_uom_then_specific_weight_uom_id_is_not_changed(self):
+    def test_update_weight_if_weight_uom_then_not_changed(self):
         """Test that when the weight is set, the current uom on the product is kept."""
         self.product.specific_weight_uom_id = self.gram
 
@@ -39,7 +39,7 @@ class TestProductWeightInUoM(common.SavepointCase):
         self.assertEqual(self.product.specific_weight_uom_id, self.gram)
 
     def test_when_update_weight_in_uom_then_weight_is_updated(self):
-        """Test that when the weight in uom is set, then the weight in kg is also updated."""
+        """Test that when the weight in uom is set, then the weight in kg is updated."""
         self.product.write({
             'weight_in_uom': 10 * 1000,
             'specific_weight_uom_id': self.gram.id,
@@ -51,7 +51,7 @@ class TestProductWeightInUoM(common.SavepointCase):
         self.assertEqual(self.product.specific_weight_uom_id, self.gram)
 
     def test_on_write_weight_in_uom_supersedes_weight(self):
-        """Test that on write, if weight and weight_in_uom are given, weight_in_uom is kept."""
+        """Test on write if weight and weight_in_uom are given weight_in_uom is kept."""
         self.product.write({
             'weight': 9,
             'weight_in_uom': 10 * 1000,
@@ -91,7 +91,8 @@ class TestProductWeightInUoM(common.SavepointCase):
         self.assertEqual(product.specific_weight_uom_id, self.gram)
 
     def test_on_create_weight_in_uom_supersedes_weight(self):
-        """Test that on create, if weight and weight_in_uom are given, weight_in_uom is kept."""
+        """Test on create if weight and weight_in_uom are
+        given weight_in_uom is kept."""
         product = self.env['product.product'].create({
             'name': 'New Product',
             'type': 'product',
