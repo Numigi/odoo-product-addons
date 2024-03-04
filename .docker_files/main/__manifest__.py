@@ -29,6 +29,7 @@
         "product_reference",
         # "product_template_tags_stock_menu",
         "product_reference_list_view",
+        "product_stock_read_access_actions",
         "product_variant_button_complete_form",
         "stock_barcode_upc",
     ],
