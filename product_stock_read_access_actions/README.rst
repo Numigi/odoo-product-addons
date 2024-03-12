@@ -7,7 +7,7 @@ Context:
 This module is a companion to the
 `product_create_group <https://github.com/Numigi/odoo-product-addons/tree/14.0/product_create_group>`_ module.
 
-Based onthe `base_extended_security <https://github.com/Numigi/odoo-base-addons/blob/14.0/base_extended_security/README.rst#action-buttons>`,
+Based on the `base_extended_security <https://github.com/Numigi/odoo-base-addons/blob/14.0/base_extended_security/README.rst#action-buttons>`_ module,
 
 when a user has only read access to a specific model due to a Basic Rule, the action buttons on the form view are hidden.
 
