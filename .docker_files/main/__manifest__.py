@@ -1,4 +1,4 @@
-# © 2018 Numigi
+# © 2024 Numigi
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 {
@@ -11,27 +11,7 @@
     "category": "Other",
     "summary": "Install all addons required for testing.",
     "depends": [
-        "product_barcode_upc",
-        "product_brand_archive",
-        "product_create_group",
-        "product_dangerous_goods",
-        "product_dimension",
-        "product_extra_views",
-        "product_extra_views_purchase",
-        "product_extra_views_sale",
-        "product_extra_views_stock",
-        "product_kit",
-        "product_manufacturer_quick_search",
-        "product_pricelist_direct_print_chatter",
-        "product_pricelist_direct_print_extended",
-        "product_purchase_order_link",
-        "product_panel_shortcut",
-        "product_reference",
-        # "product_template_tags_stock_menu",
-        "product_reference_list_view",
-        "product_stock_read_access_actions",
-        "product_variant_button_complete_form",
-        "stock_barcode_upc",
+        "product",
     ],
     "installable": True,
 }
