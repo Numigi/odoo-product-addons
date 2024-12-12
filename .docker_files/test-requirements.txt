@@ -1,2 +1,1 @@
 ddt==1.2.0
-pytest-odoo==2.1.1
