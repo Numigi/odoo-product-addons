@@ -17,5 +17,7 @@ RUN gitoo install-all --conf_file /gitoo.yml --destination "${THIRD_PARTY_ADDONS
 
 USER odoo
 
+COPY product_extra_views_stock /mnt/extra-addons/product_extra_views_stock
+
 COPY .docker_files/main /mnt/extra-addons/main
 COPY .docker_files/odoo.conf /etc/odoo

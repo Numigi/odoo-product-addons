@@ -11,7 +11,7 @@
     "category": "Other",
     "summary": "Install all addons required for testing.",
     "depends": [
-        "product",
+        "product_extra_views_stock",
     ],
     "installable": True,
 }
