@@ -25,8 +25,4 @@
         <field name="view_mode">tree,form,kanban,activity,pivot,graph</field>
     </record>
 
-    <record id="product.product_normal_action_sell" model="ir.actions.act_window">
-        <field name="view_mode">kanban,tree,form,activity,pivot,graph</field>
-    </record>
-
 </odoo>
