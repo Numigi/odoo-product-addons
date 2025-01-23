@@ -11,7 +11,7 @@
     'category': 'Product',
     'summary': 'Add pivot and graph views to products from sales',
     'depends': [
-        # 'product_extra_views',
+        'product_extra_views',
         'sale_management',
     ],
     'data': [
