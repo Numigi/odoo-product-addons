@@ -12,6 +12,7 @@
     "summary": "Install all addons required for testing.",
     "depends": [
         "product",
+        "product_extra_views_purchase"
     ],
     "installable": True,
 }
