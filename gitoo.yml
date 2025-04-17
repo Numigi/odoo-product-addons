@@ -28,6 +28,11 @@
   includes:
     - base_view_inheritance_extension
 
+- url: https://github.com/oca/queue
+  branch: "14.0"
+  includes:
+    - queue_job
+
 # Numigi Addons
 
 - url: https://github.com/Numigi/odoo-base-addons
