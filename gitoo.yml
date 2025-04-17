@@ -9,6 +9,7 @@
   branch: "14.0"
   includes:
     - product_manufacturer
+    - product_state
     - product_template_tags
     - product_pricelist_direct_print
 
@@ -29,6 +30,16 @@
   includes:
     - base_extended_security
     - test_http_request
+
+- url: https://github.com/Numigi/odoo-sale-addons
+  branch: "14.0"
+  includes:
+    - sale_rental
+
+- url: https://github.com/Numigi/odoo-stock-addons
+  branch: "14.0"
+  includes:
+    - stock_rental
 
 - url: https://{{GIT_TOKEN}}@github.com/Numigi/odoo-enterprise
   branch: "14.0"

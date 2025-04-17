@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+
+    <!-- ################    REGULAR    ################ -->
+
+    <!-- Temporarily disable noupdate for product_state_sellable -->
+    <function model="ir.model.data" name="write">
+        <value eval="[ref('product_state.product_state_sellable')]" />
+        <value eval="{'noupdate': False}" />
+    </function>
+
+    <record id="product_state.product_state_sellable" model="product.state">
+        <field name="code">normal</field>
+        <field name="name">Regular</field>
+        <field name="sequence">10</field>
+        <field name="default">True</field>
+        <field name="sale_ok">True</field>
+        <field name="purchase_ok">True</field>
+        <field name="can_be_rented">True</field>
+        <field name="is_kit">True</field>
+        <field name="can_be_expensed">True</field>
+        <field name="pack_ok">True</field>
+    </record>
+
+    <!-- Re-enable noupdate for product_state_sellable -->
+    <function model="ir.model.data" name="write">
+        <value eval="[ref('product_state.product_state_sellable')]" />
+        <value eval="{'noupdate': True}" />
+    </function>
+
+
+    <!-- ################    DEVELOPMENT    ################ -->
+
+    <!-- Temporarily disable noupdate for product_state_draft -->
+    <function model="ir.model.data" name="write">
+        <value eval="[ref('product_state.product_state_draft')]" />
+        <value eval="{'noupdate': False}" />
+    </function>
+
+    <!-- Set active to false and update name to 'Draft' for product_state_draft -->
+    <record id="product_state.product_state_draft" model="product.state">
+        <field name="code">development</field>
+        <field name="name">Development</field>
+        <field name="sequence">20</field>
+        <field name="sale_ok">False</field>
+        <field name="purchase_ok">True</field>
+        <field name="can_be_rented">False</field>
+        <field name="is_kit">False</field>
+        <field name="can_be_expensed">False</field>
+        <field name="pack_ok">False</field>
+    </record>
+
+    <!-- Re-enable noupdate for product_state_draft -->
+    <function model="ir.model.data" name="write">
+        <value eval="[ref('product_state.product_state_draft')]" />
+        <value eval="{'noupdate': True}" />
+    </function>
+
+
+    <!-- ################    END OF LIFECYCLE    ################ -->
+    
+    <!-- Temporarily disable noupdate for product_state_end -->
+    <function model="ir.model.data" name="write">
+        <value eval="[ref('product_state.product_state_end')]" />
+        <value eval="{'noupdate': False}" />
+    </function>
+
+    <!-- Update product_state_end -->
+    <function model="product.state" name="write">
+        <value eval="[ref('product_state.product_state_end')]" />
+        <value eval="{
+            'sale_ok': True,
+            'purchase_ok': True,
+            'can_be_rented': True,
+            'is_kit': True,
+            'can_be_expensed': True,
+            'pack_ok': True
+        }" />
+    </function>
+
+    <!-- Re-enable noupdate for product_state_end -->
+    <function model="ir.model.data" name="write">
+        <value eval="[ref('product_state.product_state_end')]" />
+        <value eval="{'noupdate': True}" />
+    </function>
+
+    <!-- ################    OBSOLETE    ################ -->
+
+    <!-- Temporarily disable noupdate for product_state_obsolete -->
+    <function model="ir.model.data" name="write">
+        <value eval="[ref('product_state.product_state_obsolete')]" />
+        <value eval="{'noupdate': False}" />
+    </function>
+
+    <!-- Update product_state_obsolete -->
+    <function model="product.state" name="write">
+        <value eval="[ref('product_state.product_state_obsolete')]" />
+        <value eval="{
+            'sale_ok': False,
+            'purchase_ok': False,
+            'can_be_rented': False,
+            'is_kit': False,
+            'can_be_expensed': False,
+            'pack_ok': False
+        }" />
+    </function>
+
+    <!-- Re-enable noupdate for product_state_obsolete -->
+    <function model="ir.model.data" name="write">
+        <value eval="[ref('product_state.product_state_obsolete')]" />
+        <value eval="{'noupdate': True}" />
+    </function>
+
+
+</odoo>

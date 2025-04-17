@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_product_state_form_inherit" model="ir.ui.view">
+        <field name="name">product.state.form.inherit</field>
+        <field name="model">product.state</field>
+        <field name="inherit_id" ref="product_state.view_product_state_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group string="Configuration">
+                    <field name="sale_ok" widget="boolean_toggle"/>
+                    <field name="purchase_ok" widget="boolean_toggle"/>
+                    <field name="can_be_rented" widget="boolean_toggle"/>
+                    <field name="is_kit" widget="boolean_toggle"/>
+                    <field name="can_be_expensed" widget="boolean_toggle"/>
+                    <field name="pack_ok" widget="boolean_toggle"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+    
+</odoo>
