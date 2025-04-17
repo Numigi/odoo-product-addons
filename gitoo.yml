@@ -32,6 +32,7 @@
   branch: "14.0"
   includes:
     - queue_job
+    - queue_job_cron
 
 # Numigi Addons
 

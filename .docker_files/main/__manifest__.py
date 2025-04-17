@@ -12,7 +12,7 @@
     "summary": "Install all addons required for testing.",
     "depends": [
         # For sub-dependency sale_rental of product_state_extended
-        "queue_job",
+        "queue_job_cron",
         "product_barcode_upc",
         "product_brand_archive",
         "product_create_group",
