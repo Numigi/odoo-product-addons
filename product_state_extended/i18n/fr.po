@@ -1,0 +1,105 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* product_state_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-25 10:04+0000\n"
+"PO-Revision-Date: 2025-03-25 10:04+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_state_extended
+#: model:ir.model.fields,field_description:product_state_extended.field_product_product__can_edit_product_state
+#: model:ir.model.fields,field_description:product_state_extended.field_product_template__can_edit_product_state
+msgid "Can Edit Product State"
+msgstr "Vendable"
+
+#. module: product_state_extended
+#: model:ir.model.fields,field_description:product_state_extended.field_product_state__can_be_expensed
+msgid "Can be Expensed"
+msgstr "Dépense"
+
+#. module: product_state_extended
+#: model:ir.model.fields,field_description:product_state_extended.field_product_state__purchase_ok
+msgid "Can be Purchased"
+msgstr "Achetable"
+
+#. module: product_state_extended
+#: model:ir.model.fields,field_description:product_state_extended.field_product_state__can_be_rented
+msgid "Can be Rented"
+msgstr "Peut être loué"
+
+#. module: product_state_extended
+#: model:ir.model.fields,field_description:product_state_extended.field_product_state__sale_ok
+msgid "Can be Sold"
+msgstr "Vendable"
+
+#. module: product_state_extended
+#: model:ir.model.fields,field_description:product_state_extended.field_product_state__pack_ok
+msgid "Can be a Pack"
+msgstr "Kit"
+
+#. module: product_state_extended
+#: model_terms:ir.ui.view,arch_db:product_state_extended.view_product_state_form_inherit
+msgid "Configuration"
+msgstr ""
+
+#. module: product_state_extended
+#: model:ir.model.fields,field_description:product_state_extended.field_product_product__display_name
+#: model:ir.model.fields,field_description:product_state_extended.field_product_state__display_name
+#: model:ir.model.fields,field_description:product_state_extended.field_product_template__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: product_state_extended
+#: model:ir.model.fields,field_description:product_state_extended.field_product_product__id
+#: model:ir.model.fields,field_description:product_state_extended.field_product_state__id
+#: model:ir.model.fields,field_description:product_state_extended.field_product_template__id
+msgid "ID"
+msgstr ""
+
+#. module: product_state_extended
+#: model:ir.model.fields,field_description:product_state_extended.field_product_state__is_kit
+msgid "Is a Kit"
+msgstr "Est un kit location"
+
+#. module: product_state_extended
+#: model:ir.model.fields,field_description:product_state_extended.field_product_product____last_update
+#: model:ir.model.fields,field_description:product_state_extended.field_product_state____last_update
+#: model:ir.model.fields,field_description:product_state_extended.field_product_template____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: product_state_extended
+#: model:ir.model,name:product_state_extended.model_product_product
+msgid "Product"
+msgstr "Article"
+
+#. module: product_state_extended
+#: model:ir.model,name:product_state_extended.model_product_state
+msgid "Product State"
+msgstr "Etat de l'article"
+
+#. module: product_state_extended
+#: model:res.groups,name:product_state_extended.group_product_state_manager
+msgid "Product State Manager"
+msgstr "Gestionnaire de l'état du produit"
+
+#. module: product_state_extended
+#: model:ir.model,name:product_state_extended.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: product_state_extended
+#: code:addons/product_state_extended/models/product_product.py:0
+#: code:addons/product_state_extended/models/product_template.py:0
+#, python-format
+msgid "You are not allowed to change the product state."
+msgstr "Vous n'êtes pas autorisé à modifier l'état du produit."
