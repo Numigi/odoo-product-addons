@@ -11,6 +11,8 @@
     "category": "Other",
     "summary": "Install all addons required for testing.",
     "depends": [
+        # For sub-dependency sale_rental of product_state_extended
+        "queue_job",
         "product_barcode_upc",
         "product_brand_archive",
         "product_create_group",
@@ -33,8 +35,6 @@
         "product_stock_read_access_actions",
         "product_variant_button_complete_form",
         "stock_barcode_upc",
-        # For sub-dependency sale_rental of product_state_extended
-        "queue_job",
     ],
     "installable": True,
 }
