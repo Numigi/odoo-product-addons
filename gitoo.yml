@@ -23,6 +23,11 @@
   includes:
     - report_xlsx  # dependency of product_pricelist_direct_print
 
+- url: https://github.com/oca/server-tools
+  branch: "14.0"
+  includes:
+    - base_view_inheritance_extension
+
 # Numigi Addons
 
 - url: https://github.com/Numigi/odoo-base-addons
@@ -34,12 +39,20 @@
 - url: https://github.com/Numigi/odoo-sale-addons
   branch: "14.0"
   includes:
+    - sale_order_line_readonly_conditions
     - sale_rental
+    - sale_kit
 
 - url: https://github.com/Numigi/odoo-stock-addons
   branch: "14.0"
   includes:
     - stock_rental
+
+- url: https://github.com/Numigi/odoo-web-addons
+  branch: "14.0"
+  includes:
+    - web_handle_condition
+    - web_trash_condition
 
 - url: https://{{GIT_TOKEN}}@github.com/Numigi/odoo-enterprise
   branch: "14.0"
